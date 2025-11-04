@@ -227,6 +227,126 @@ const IconBook = ({ className }) => (
   </svg>
 );
 
+const IconDirector = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <circle
+      cx="7.5"
+      cy="7.5"
+      r="2.25"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
+    <circle
+      cx="13"
+      cy="6"
+      r="1.75"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
+    <rect
+      x="4.5"
+      y="9.5"
+      width="11"
+      height="7"
+      rx="1.5"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M15.5 11.5 19.5 9v8l-4-2.5V11.5Z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const IconGlobe = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" />
+    <path
+      d="M4.5 12h15M12 4c2.2 2.4 2.2 13.6 0 16M9 4.8c-1.3.9-2.5 3.4-2.5 7.2S7.7 18.4 9 19.2M15 4.8c1.3.9 2.5 3.4 2.5 7.2S16.3 18.4 15 19.2"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+const IconLanguage = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M19.5 5.5H9.75a1.75 1.75 0 0 0-1.75 1.75v4.5a1.75 1.75 0 0 0 1.75 1.75H12l3.25 3.5v-3.5h4.25A1.75 1.75 0 0 0 21 11.75v-4.5A1.75 1.75 0 0 0 19.5 5.5Z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M4.5 13.5v4c0 .97.78 1.75 1.75 1.75H12"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M12.25 9h4.5M13.5 11.25h2"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+const IconCannes = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M5 16c1.8-3.6 4.8-6.3 9-7.8-2.2 1.9-3.6 4-4.3 6.4"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M19 16c-1.8-3.6-4.8-6.3-9-7.8 2.2 1.9 3.6 4 4.3 6.4"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.5 17.5h5"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
 const keywordOptions = [
   "Adventure",
   "Heartwarming",
@@ -249,16 +369,31 @@ const playlistSeed = [
         title: "Moonlight Mission",
         blurb:
           "A gentle sci-fi tale about a sibling duo learning teamwork on a lunar quest.",
+        director: "Ari Vega",
+        country: "Singapore",
+        language: "English & Mandarin",
+        runtime: "1h 12m",
+        awards: ["Cannes Junior Nights - Audience Award"],
       },
       {
         title: "Comet Campfire",
         blurb:
           "Stories, snacks, and shimmering skies in a calm cosmic campground.",
+        director: "Leila Tan",
+        country: "Philippines",
+        language: "English & Tagalog",
+        runtime: "58m",
+        awards: ["Busan Kids Wave - Best Short Program"],
       },
       {
         title: "Stardust Sleepover",
         blurb:
           "A bedtime-ready short filled with lullaby melodies and floating star critters.",
+        director: "Mina Koh",
+        country: "South Korea",
+        language: "Korean",
+        runtime: "46m",
+        awards: ["Cannes Junior Nights - Official Selection"],
       },
     ],
     reviews: [
@@ -316,19 +451,39 @@ const playlistSeed = [
         title: "Popcorn Pranksters",
         blurb:
           "Two best friends rescue a cinema night with imaginative mischief.",
+        director: "Diego Martins",
+        country: "Brazil",
+        language: "Portuguese & English",
+        runtime: "1h 05m",
+        awards: ["TIFFkids - Best Ensemble Comedy"],
       },
       {
         title: "The Umbrella Parade",
         blurb:
           "Colorful umbrella creatures tumble through town with rhythmic giggles.",
+        director: "Aya Nakamori",
+        country: "Japan",
+        language: "Japanese",
+        runtime: "52m",
+        awards: ["Cannes Junior Nights - Jury Mention"],
       },
       {
         title: "Whisker Whirl",
         blurb: "A troupe of circus kittens learns timing the silly way.",
+        director: "Imani Brooks",
+        country: "United States",
+        language: "English",
+        runtime: "1h 10m",
+        awards: ["SXSW WonderKids - Audience Favorite"],
       },
       {
         title: "Balloon Buddies",
         blurb: "Short, smart, and delightfully bouncy cartoon skits.",
+        director: "Noah Feld",
+        country: "Canada",
+        language: "English & French",
+        runtime: "48m",
+        awards: ["Annecy Family Spotlight - Special Distinction"],
       },
     ],
     reviews: [
@@ -387,16 +542,31 @@ const playlistSeed = [
         title: "Lanterns in the Library",
         blurb:
           "A friendship forms while restoring a community library by lantern light.",
+        director: "Siti Rahman",
+        country: "Malaysia",
+        language: "English & Malay",
+        runtime: "1h 20m",
+        awards: ["Berlinale Generation - Crystal Bear Nominee"],
       },
       {
         title: "Garden of Small Giants",
         blurb:
           "Micro-adventures that show how little acts of kindness grow big hearts.",
+        director: "Petra Milos",
+        country: "Croatia",
+        language: "Croatian & English",
+        runtime: "54m",
+        awards: ["Cannes Junior Nights - Storytelling Award"],
       },
       {
         title: "The Bridge Builders",
         blurb:
           "An animated journey about listening, apologising, and starting fresh.",
+        director: "Linh Tran",
+        country: "Vietnam",
+        language: "Vietnamese",
+        runtime: "1h 35m",
+        awards: ["Tribeca Family - Grand Prize"],
       },
     ],
     reviews: [
@@ -524,26 +694,98 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
         className="flex transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
-        {films.map((film) => (
-          <div key={film.title} className="min-w-full p-6 sm:p-8 lg:p-10">
-            <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-brand-cream/60">
-                  Featured Film
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold text-brand-gold">
-                  {film.title}
-                </h3>
-                <p className="mt-3 text-sm text-brand-cream/70">
-                  {film.blurb}
-                </p>
-              </div>
-              <div className="flex h-48 items-center justify-center rounded-2xl border border-brand-gold/15 bg-brand-gold/5 text-xs uppercase tracking-[0.3em] text-brand-cream/40 sm:h-56">
-                GIF placeholder
+        {films.map((film) => {
+          const {
+            title,
+            blurb,
+            director,
+            country,
+            language,
+            runtime,
+            awards = [],
+          } = film;
+          const hasAwards = Array.isArray(awards) && awards.length > 0;
+
+          return (
+            <div key={title} className="min-w-full p-6 sm:p-8 lg:p-10">
+              <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-brand-cream/60">
+                    Featured Film
+                  </p>
+                  <h3 className="mt-3 text-2xl font-semibold text-brand-gold">
+                    {title}
+                  </h3>
+                  <p className="mt-3 text-sm text-brand-cream/70">{blurb}</p>
+
+                  <div className="mt-6 space-y-4 text-sm text-brand-cream/80">
+                    <div className="flex items-start gap-3">
+                      <IconClock className="h-6 w-6 text-brand-gold" />
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
+                          Runtime
+                        </p>
+                        <p className="font-medium text-brand-cream">
+                          {runtime || "TBA"}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <IconDirector className="h-6 w-6 text-brand-gold" />
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
+                          Director
+                        </p>
+                        <p className="font-medium text-brand-cream">{director}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <IconGlobe className="h-6 w-6 text-brand-gold" />
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
+                          Country
+                        </p>
+                        <p className="font-medium text-brand-cream">{country}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <IconLanguage className="h-6 w-6 text-brand-gold" />
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
+                          Language
+                        </p>
+                        <p className="font-medium text-brand-cream">{language}</p>
+                      </div>
+                    </div>
+                    {hasAwards ? (
+                      <div className="flex items-start gap-3">
+                        <IconCannes className="h-6 w-6 text-brand-gold" />
+                        <div>
+                          <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
+                            Awards
+                          </p>
+                          <div className="mt-2 flex flex-wrap gap-2">
+                            {awards.map((award) => (
+                              <span
+                                key={`${title}-${award}`}
+                                className="rounded-full border border-brand-gold/30 bg-brand-gold/10 px-3 py-1 text-[0.65rem] uppercase tracking-[0.25em] text-brand-cream"
+                              >
+                                {award}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+                <div className="flex h-48 items-center justify-center rounded-2xl border border-brand-gold/15 bg-brand-gold/5 text-xs uppercase tracking-[0.3em] text-brand-cream/40 sm:h-56">
+                  GIF placeholder
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {films.length > 1 && (
