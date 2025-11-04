@@ -747,6 +747,7 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
             country,
             language,
             runtimeMinutes,
+            link,
             awards = [],
           } = film;
           const hasAwards = Array.isArray(awards) && awards.length > 0;
@@ -758,83 +759,103 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
               ? `${formatRuntime(runtimeMinutes)} (${runtimeMinutes} min)`
               : `${runtimeMinutes} min`;
 
-          return (
-            <div key={title} className="min-w-full p-6 sm:p-8 lg:p-10">
-              <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-brand-cream/60">
-                    Featured Film
-                  </p>
-                  <h3 className="mt-3 text-2xl font-semibold text-brand-gold">
-                    {title}
-                  </h3>
-                  <p className="mt-3 text-sm text-brand-cream/70">{blurb}</p>
+          const content = (
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-brand-cream/60">
+                  Featured Film
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold text-brand-gold">
+                  {title}
+                </h3>
+                <p className="mt-3 text-sm text-brand-cream/70">{blurb}</p>
 
-                  <div className="mt-6 space-y-4 text-sm text-brand-cream/80">
+                <div className="mt-6 space-y-4 text-sm text-brand-cream/80">
+                  <div className="flex items-start gap-3">
+                    <IconClock className="h-6 w-6 text-brand-gold" />
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
+                        Runtime
+                      </p>
+                      <p className="font-medium text-brand-cream">
+                        {runtimeLabel}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <IconDirector className="h-6 w-6 text-brand-gold" />
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
+                        Director
+                      </p>
+                      <p className="font-medium text-brand-cream">{director}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <IconGlobe className="h-6 w-6 text-brand-gold" />
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
+                        Country
+                      </p>
+                      <p className="font-medium text-brand-cream">{country}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <IconLanguage className="h-6 w-6 text-brand-gold" />
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
+                        Language
+                      </p>
+                      <p className="font-medium text-brand-cream">{language}</p>
+                    </div>
+                  </div>
+                  {hasAwards ? (
                     <div className="flex items-start gap-3">
-                      <IconClock className="h-6 w-6 text-brand-gold" />
+                      <IconCannes className="h-6 w-6 text-brand-gold" />
                       <div>
                         <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
-                          Runtime
+                          Awards
                         </p>
-                        <p className="font-medium text-brand-cream">
-                          {runtimeLabel}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <IconDirector className="h-6 w-6 text-brand-gold" />
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
-                          Director
-                        </p>
-                        <p className="font-medium text-brand-cream">{director}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <IconGlobe className="h-6 w-6 text-brand-gold" />
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
-                          Country
-                        </p>
-                        <p className="font-medium text-brand-cream">{country}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <IconLanguage className="h-6 w-6 text-brand-gold" />
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
-                          Language
-                        </p>
-                        <p className="font-medium text-brand-cream">{language}</p>
-                      </div>
-                    </div>
-                    {hasAwards ? (
-                      <div className="flex items-start gap-3">
-                        <IconCannes className="h-6 w-6 text-brand-gold" />
-                        <div>
-                          <p className="text-xs uppercase tracking-[0.25em] text-brand-cream/50">
-                            Awards
-                          </p>
-                          <div className="mt-2 flex flex-wrap gap-2">
-                            {awards.map((award) => (
-                              <span
-                                key={`${title}-${award}`}
-                                className="rounded-full border border-brand-gold/30 bg-brand-gold/10 px-3 py-1 text-[0.65rem] uppercase tracking-[0.25em] text-brand-cream"
-                              >
-                                {award}
-                              </span>
-                            ))}
-                          </div>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {awards.map((award) => (
+                            <span
+                              key={`${title}-${award.name}-${award.organization}-${award.year}`}
+                              className="rounded-full border border-brand-gold/30 bg-brand-gold/10 px-3 py-1 text-[0.65rem] uppercase tracking-[0.2em] text-brand-cream"
+                            >
+                              {award.name}
+                              {award.organization ? ` • ${award.organization}` : ""}
+                              {award.year ? ` (${award.year})` : ""}
+                            </span>
+                          ))}
                         </div>
                       </div>
-                    ) : null}
-                  </div>
-                </div>
-                <div className="flex h-48 items-center justify-center rounded-2xl border border-brand-gold/15 bg-brand-gold/5 text-xs uppercase tracking-[0.3em] text-brand-cream/40 sm:h-56">
-                  GIF placeholder
+                    </div>
+                  ) : null}
                 </div>
               </div>
+              <div className="flex h-48 items-center justify-center rounded-2xl border border-brand-gold/15 bg-brand-gold/5 text-xs uppercase tracking-[0.3em] text-brand-cream/40 sm:h-56">
+                GIF placeholder
+              </div>
+            </div>
+          );
+
+          if (link) {
+            return (
+              <a
+                key={title}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-w-full block p-6 sm:p-8 lg:p-10 transition hover:bg-brand-black/30"
+              >
+                {content}
+              </a>
+            );
+          }
+
+          return (
+            <div key={title} className="min-w-full p-6 sm:p-8 lg:p-10">
+              {content}
             </div>
           );
         })}
