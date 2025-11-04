@@ -360,7 +360,7 @@ const IconPlayOutline = ({ className }) => (
   </svg>
 );
 
-const keywordOptions = ["Heartwarming", "Solace", "Growth"];
+const keywordOptions = ["Heartwarming", "Growth", "Solace"];
 
 const playlistSeed = [
   {
@@ -477,98 +477,6 @@ const playlistSeed = [
     ],
   },
   {
-    id: "solace-playlist",
-    title: "Solace Stories",
-    tagline: "Where love mends, and time heals.",
-    // ageRange: "6 – 10 years",
-    tags: ["Solace"],
-    films: [
-      {
-        title: "Roise & Frank",
-        blurb:
-          "Recently widowed Róise is struggling with her grief following her husband's passing. However, when a stray dog starts to follow her around, she starts to believe that it might be the reincarnation of her husband.",
-        director: "Rachael Moriart and Peter Murphy",
-        country: "Ireland",
-        language: "English, Gaelic",
-        runtimeMinutes: 99,
-        link: "https://www.mewatch.sg/movie/Roise-and-Frank-416635",
-        videoEmbed:
-          "https://www.youtube.com/embed/A5z58a_a4EE?si=F-BN5knEZBRX-iIV",
-        posterImage: "https://img.youtube.com/vi/A5z58a_a4EE/maxresdefault.jpg",
-        awards: [
-          {
-            name: "Best Film Nominee",
-            organization: "Irish Film and Television Awards",
-            year: 2023,
-          },
-        ],
-      },
-      {
-        title: "Heavenly Nomadic",
-        blurb:
-          "A family of nomads dwelling high in the mountains of Kyrgyzstan doesn't need any of the conveniences of modern civilization in order to be happy. But progress is creeping into their lives regardless, destroying legends and traditions as it comes.",
-        director: "Mirlan Abdykalykov",
-        country: "Kyrgyzstan",
-        language: "Kyrgyz",
-        runtimeMinutes: 81,
-        link: "https://www.mewatch.sg/movie/Heavenly-Nomadic-508759",
-        videoEmbed:
-          "https://www.youtube.com/embed/APXgauNxhFw?si=OFun79XCSqE20X8z",
-        posterImage: "https://img.youtube.com/vi/APXgauNxhFw/maxresdefault.jpg",
-        awards: [
-          {
-            name: "Kyrgyz Entry, Best Foreign Language Film",
-            organization: "88th Academy Awards",
-            year: 2015,
-          },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        reviewer: "Morgan L.",
-        rating: 4,
-        comment:
-          "We paused twice because the kids were laughing too hard to hear the punchline.",
-        keywords: ["Laughs", "Adventure"],
-      },
-      {
-        reviewer: "Priya N.",
-        rating: 5,
-        comment: "Even the grandparents chuckled—great for mixed ages.",
-        keywords: ["Heartwarming", "Laughs"],
-      },
-      {
-        reviewer: "Amir H.",
-        rating: 4,
-        comment:
-          "High-energy without feeling chaotic. The mini-games between shorts were a hit.",
-        keywords: ["Energy", "Laughs"],
-      },
-      {
-        reviewer: "Kendall T.",
-        rating: 5,
-        comment:
-          "Zero downtime—our 7- and 10-year-old laughed the whole way through.",
-        keywords: ["Laughs", "Energy"],
-      },
-      {
-        reviewer: "Uncle Jay",
-        rating: 4,
-        comment:
-          "The physical comedy landed for adults too. Balloon Buddies is an instant classic.",
-        keywords: ["Heartwarming", "Laughs"],
-      },
-      {
-        reviewer: "Mara & Lee",
-        rating: 5,
-        comment:
-          "Perfect rainy-day marathon. Loved the dance-off prompt at the end credits.",
-        keywords: ["Music", "Energy"],
-      },
-    ],
-  },
-  {
     id: "growth-playlist",
     title: "Journeys of Growth",
     tagline: "Becoming your best self, one story at a time.",
@@ -675,14 +583,126 @@ const playlistSeed = [
       },
     ],
   },
+  {
+    id: "solace-playlist",
+    title: "Solace Stories",
+    tagline: "Where love mends, and time heals.",
+    // ageRange: "6 – 10 years",
+    tags: ["Solace"],
+    films: [
+      {
+        title: "Roise & Frank",
+        blurb:
+          "Recently widowed Róise is struggling with her grief following her husband's passing. However, when a stray dog starts to follow her around, she starts to believe that it might be the reincarnation of her husband.",
+        director: "Rachael Moriart and Peter Murphy",
+        country: "Ireland",
+        language: "English, Gaelic",
+        runtimeMinutes: 99,
+        link: "https://www.mewatch.sg/movie/Roise-and-Frank-416635",
+        videoEmbed:
+          "https://www.youtube.com/embed/A5z58a_a4EE?si=F-BN5knEZBRX-iIV",
+        posterImage: "https://img.youtube.com/vi/A5z58a_a4EE/maxresdefault.jpg",
+        awards: [
+          {
+            name: "Best Film Nominee",
+            organization: "Irish Film and Television Awards",
+            year: 2023,
+          },
+        ],
+      },
+      {
+        title: "Heavenly Nomadic",
+        blurb:
+          "A family of nomads dwelling high in the mountains of Kyrgyzstan doesn't need any of the conveniences of modern civilization in order to be happy. But progress is creeping into their lives regardless, destroying legends and traditions as it comes.",
+        director: "Mirlan Abdykalykov",
+        country: "Kyrgyzstan",
+        language: "Kyrgyz",
+        runtimeMinutes: 81,
+        link: "https://www.mewatch.sg/movie/Heavenly-Nomadic-508759",
+        videoEmbed:
+          "https://www.youtube.com/embed/APXgauNxhFw?si=OFun79XCSqE20X8z",
+        posterImage: "https://img.youtube.com/vi/APXgauNxhFw/maxresdefault.jpg",
+        awards: [
+          {
+            name: "Kyrgyz Entry, Best Foreign Language Film",
+            organization: "88th Academy Awards",
+            year: 2015,
+          },
+        ],
+      },
+    ],
+    reviews: [
+      {
+        reviewer: "Morgan L.",
+        rating: 4,
+        comment:
+          "We paused twice because the kids were laughing too hard to hear the punchline.",
+        keywords: ["Laughs", "Adventure"],
+      },
+      {
+        reviewer: "Priya N.",
+        rating: 5,
+        comment: "Even the grandparents chuckled—great for mixed ages.",
+        keywords: ["Heartwarming", "Laughs"],
+      },
+      {
+        reviewer: "Amir H.",
+        rating: 4,
+        comment:
+          "High-energy without feeling chaotic. The mini-games between shorts were a hit.",
+        keywords: ["Energy", "Laughs"],
+      },
+      {
+        reviewer: "Kendall T.",
+        rating: 5,
+        comment:
+          "Zero downtime—our 7- and 10-year-old laughed the whole way through.",
+        keywords: ["Laughs", "Energy"],
+      },
+      {
+        reviewer: "Uncle Jay",
+        rating: 4,
+        comment:
+          "The physical comedy landed for adults too. Balloon Buddies is an instant classic.",
+        keywords: ["Heartwarming", "Laughs"],
+      },
+      {
+        reviewer: "Mara & Lee",
+        rating: 5,
+        comment:
+          "Perfect rainy-day marathon. Loved the dance-off prompt at the end credits.",
+        keywords: ["Music", "Energy"],
+      },
+    ],
+  },
 ];
 
 const moodFilters = [
-  { id: "all", label: "Show All", Icon: IconSpark },
-  { id: "Adventure", label: "Adventure", Icon: IconCompass },
-  { id: "Laughs", label: "Laughs", Icon: IconLaugh },
-  { id: "Heartwarming", label: "Cozy", Icon: IconHeart },
-  { id: "Learning", label: "Learning", Icon: IconBook },
+  {
+    id: "all",
+    label: "Show All",
+    Icon: IconSpark,
+    description: "Browse every playlist in this collection.",
+  },
+  {
+    id: "Heartwarming",
+    label: "Heartwarming",
+    Icon: IconHeart,
+    description: "Stories that nurture big feelings, empathy, and connection.",
+  },
+  {
+    id: "Growth",
+    label: "Growth",
+    Icon: IconBook,
+    description:
+      "Films that inspire reflection, resilience, and new perspectives.",
+  },
+  {
+    id: "Solace",
+    label: "Solace",
+    Icon: IconNote,
+    description: "Gentle, soothing films to help kids wind down and feel safe.",
+  },
 ];
 
 function getReviewStats(reviews) {
