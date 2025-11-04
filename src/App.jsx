@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "./assset/cw_logo.svg";
+import { Analytics } from "@vercel/analytics/react";
 
 const IconSpark = ({ className }) => (
   <svg
@@ -1568,6 +1569,7 @@ export default function App() {
           Powered by CinemaWorld Asia • Crafted for families
         </footer>
       </div>
+      <Analytics />
     </div>
   );
 }
