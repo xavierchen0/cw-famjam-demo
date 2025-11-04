@@ -435,44 +435,46 @@ const playlistSeed = [
     ],
     reviews: [
       {
-        reviewer: "Camila R.",
+        reviewer: "Mia & Jun",
         rating: 5,
         comment:
-          "Our twins loved the cozy glow and the songs are still stuck in our heads.",
-        keywords: ["Heartwarming", "Music"],
+          "Confetti reminded our daughter that her way of learning is a superpower—we ended movie night with a big family hug.",
+        keywords: ["Heartwarming", "Growth"],
       },
       {
-        reviewer: "Jules P.",
+        reviewer: "The Ong Family",
         rating: 4,
-        comment: "Perfect wind-down vibe and a sweet reminder about sharing.",
-        keywords: ["Learning", "Heartwarming"],
+        comment:
+          "Comet Campfire became our Sunday wind-down ritual. Soft colors, gentle music, and a calm story help everyone exhale.",
+        keywords: ["Solace", "Heartwarming"],
       },
       {
-        reviewer: "Sal M.",
+        reviewer: "Priyanka D.",
         rating: 5,
         comment:
-          "Spacey visuals without the big scares—exactly what we needed.",
-        keywords: ["Visuals", "Adventure"],
+          "Summer Rebels sparked great chats about courage and friendship—perfect blend of cozy and adventurous.",
+        keywords: ["Heartwarming", "Growth"],
       },
       {
-        reviewer: "Eli B.",
+        reviewer: "Goh & Partners",
         rating: 4,
         comment:
-          "The quiet pacing was perfect for our sensory-sensitive kiddo.",
-        keywords: ["Adventure", "Soothing"],
+          "My anxious kiddo actually relaxed during Comet Campfire’s lullaby scene. It’s our new bedtime favorite.",
+        keywords: ["Solace", "Heartwarming"],
       },
       {
-        reviewer: "Rina S.",
+        reviewer: "Liu Family",
         rating: 5,
-        comment: "We ended the night making constellation snacks—huge hit.",
-        keywords: ["Learning", "Curiosity"],
+        comment:
+          "Stardust Sleepover inspired a gratitude journaling activity—beautiful way to end the evening on a thoughtful note.",
+        keywords: ["Growth", "Heartwarming"],
       },
       {
-        reviewer: "The Delgados",
+        reviewer: "Amelia & Noor",
         rating: 4,
         comment:
-          "Beautiful score and the stargazing tips were unexpectedly helpful.",
-        keywords: ["Music", "Visuals"],
+          "We love how each film balances comfort with little sparks of curiosity. It keeps the kids inspired yet grounded.",
+        keywords: ["Solace", "Growth"],
       },
     ],
   },
@@ -543,43 +545,43 @@ const playlistSeed = [
         reviewer: "Jonah F.",
         rating: 5,
         comment:
-          "Great conversation starters—our 9-year-old opened up about school.",
-        keywords: ["Learning", "Heartwarming"],
+          "Confetti opened up a heart-to-heart about dyslexia and perseverance—our son felt truly seen.",
+        keywords: ["Growth", "Heartwarming"],
       },
       {
         reviewer: "Steph W.",
         rating: 4,
         comment:
-          "Beautiful pacing and music. Maybe a tad long for younger kids but worth it.",
-        keywords: ["Music", "Visuals"],
+          "Binti gave our tween a new female role model. We paused often to discuss resilience and activism.",
+        keywords: ["Growth", "Conversation"],
       },
       {
-        reviewer: "Nia K.",
+        reviewer: "Kaur Family",
         rating: 5,
         comment:
-          "We now have a weekly “kindness mission.” The post-film prompts help a lot.",
-        keywords: ["Learning", "Heartwarming"],
+          "What’s for Dinner, Mom? nudged both kids to ask about our family history—it turned into a recipe-sharing night.",
+        keywords: ["Growth", "Family Night"],
       },
       {
         reviewer: "Amelia O.",
         rating: 4,
         comment:
-          "A little long, but the conversation cards kept our preteen engaged.",
-        keywords: ["Conversation", "Learning"],
+          "These films balance emotional honesty with optimism. Perfect for kids stepping into bigger responsibilities.",
+        keywords: ["Growth", "Heartwarming"],
+      },
+      {
+        reviewer: "Nia K.",
+        rating: 5,
+        comment:
+          "We journal after each story—this playlist is a catalyst for reflection and personal goal-setting.",
+        keywords: ["Growth", "Conversation"],
       },
       {
         reviewer: "Parents of Room 5",
         rating: 5,
         comment:
-          "Used this for a classroom family night—tears, laughs, everything. Highly recommend.",
-        keywords: ["Family Night", "Heartwarming"],
-      },
-      {
-        reviewer: "Zhang Family",
-        rating: 4,
-        comment:
-          "Loved the multicultural touches and the empathy moments felt authentic.",
-        keywords: ["Empathy", "Visuals"],
+          "Used it for our leadership workshop—the kids left motivated to speak up and support one another.",
+        keywords: ["Growth", "Empathy"],
       },
     ],
   },
@@ -634,44 +636,45 @@ const playlistSeed = [
     reviews: [
       {
         reviewer: "Morgan L.",
-        rating: 4,
+        rating: 5,
         comment:
-          "We paused twice because the kids were laughing too hard to hear the punchline.",
-        keywords: ["Laughs", "Adventure"],
+          "Róise & Frank gave my mum permission to smile again after losing dad. We cried, then laughed, then felt lighter.",
+        keywords: ["Solace", "Heartwarming"],
       },
       {
         reviewer: "Priya N.",
-        rating: 5,
-        comment: "Even the grandparents chuckled—great for mixed ages.",
-        keywords: ["Heartwarming", "Laughs"],
+        rating: 4,
+        comment:
+          "Heavenly Nomadic is the calmest film we’ve watched—it invited the whole family to slow down and breathe.",
+        keywords: ["Solace", "Reflection"],
       },
       {
         reviewer: "Amir H.",
-        rating: 4,
+        rating: 5,
         comment:
-          "High-energy without feeling chaotic. The mini-games between shorts were a hit.",
-        keywords: ["Energy", "Laughs"],
+          "These films feel like warm tea on a rainy evening. The pacing is gentle without being dull.",
+        keywords: ["Solace", "Heartwarming"],
       },
       {
         reviewer: "Kendall T.",
-        rating: 5,
+        rating: 4,
         comment:
-          "Zero downtime—our 7- and 10-year-old laughed the whole way through.",
-        keywords: ["Laughs", "Energy"],
+          "We paired the playlist with a quiet art activity—perfect way to help our anxious tween reset after a tough week.",
+        keywords: ["Solace", "Growth"],
       },
       {
         reviewer: "Uncle Jay",
-        rating: 4,
+        rating: 5,
         comment:
-          "The physical comedy landed for adults too. Balloon Buddies is an instant classic.",
-        keywords: ["Heartwarming", "Laughs"],
+          "The stories are tender but hopeful. Even our teenager stayed for the post-film chat about grief and healing.",
+        keywords: ["Solace", "Family Night"],
       },
       {
         reviewer: "Mara & Lee",
         rating: 5,
         comment:
-          "Perfect rainy-day marathon. Loved the dance-off prompt at the end credits.",
-        keywords: ["Music", "Energy"],
+          "This playlist is our go-to when the household feels overwhelmed—it brings everyone back to a gentle center.",
+        keywords: ["Solace", "Heartwarming"],
       },
     ],
   },
