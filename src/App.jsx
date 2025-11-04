@@ -349,13 +349,7 @@ const IconPlayOutline = ({ className }) => (
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >
-    <circle
-      cx="12"
-      cy="12"
-      r="8.5"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    />
+    <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.5" />
     <path
       d="M10.25 8.75v6.5l5.25-3.25-5.25-3.25Z"
       stroke="currentColor"
@@ -371,69 +365,91 @@ const keywordOptions = ["Heartwarming", "Solace", "Growth"];
 const playlistSeed = [
   {
     id: "heart-warming-playlist",
-    title: "Whimsical & Wonder-filled Journey",
-    tagline:
-      "Young protagonists discovering magic, imagination, or joy through adventure or friendship.",
+    title: "Heartwarming Tales",
+    tagline: "Stories that make hearts glow and families smile.",
     // ageRange: "5 – 8 years",
     tags: ["Heartwarming"],
     films: [
       {
-        title: "Confetti",
+        title: "Oddball",
         blurb:
-          "A determined mother moves from rural China to New York City in hopes of finding a special education program for her dyslexic daughter.",
-        director: "Ann Hu",
-        country: "USA",
-        language: "Chinese, English",
-        runtimeMinutes: 85,
-        link: "https://www.mewatch.sg/movie/Confetti-468752",
+          "An eccentric chicken farmer, with the help of his granddaughter, trains his mischievous dog Oddball to protect a penguin sanctuary from fox attacks in an attempt to reunite his family and save their seaside town.",
+        director: "Stuart McDonald",
+        country: "Australia",
+        language: "English",
+        runtimeMinutes: 93,
+        link: "https://www.mewatch.sg/movie/Oddball-401215",
         videoEmbed:
-          "https://www.youtube.com/embed/bsmmkmXEwk0?si=Blxwu5-BnTyrfazW",
-        posterImage: "https://img.youtube.com/vi/bsmmkmXEwk0/maxresdefault.jpg",
+          "https://www.youtube.com/embed/GF27NLqHNqs?si=fvyvtX__KWLRN2QU",
+        posterImage: "https://img.youtube.com/vi/GF27NLqHNqs/maxresdefault.jpg",
         awards: [
           {
-            name: "Audience Award",
-            organization: "Cannes Junior Nights",
-            year: 2023,
+            name: "Audience Choice Award",
+            organization:
+              "Australian Academy of Cinema and Television Arts (AACTA) Awards",
+            year: 2015,
           },
         ],
       },
       {
-        title: "Comet Campfire",
+        title: "A Butterfly's Heart",
         blurb:
-          "Stories, snacks, and shimmering skies in a calm cosmic campground.",
-        director: "Leila Tan",
-        country: "Philippines",
-        language: "English & Tagalog",
-        runtimeMinutes: 58,
-        link: "https://example.com/comet-campfire",
+          "Juozapas is a quiet boy who cultivates insects in an abandoned house. He has a big bulge under his weird sweater and the school’s tough kids call him “balloon”. Rugilè moves to town and becomes Juozapas’ friend. She is the first to discover his secret.",
+        director: "Inesa Kurklietyte",
+        country: "Lithuania",
+        language: "Lithuanian",
+        runtimeMinutes: 120,
+        link: "https://www.mewatch.sg/movie/A-Butterflys-Heart-435982",
         videoEmbed:
-          "https://www.youtube.com/embed/cometcampfire?rel=0&modestbranding=1",
-        posterImage: "",
+          "https://www.youtube.com/embed/nzDCLv1gaCA?si=0ZKwnNRuLRMlaBMn",
+        posterImage: "https://img.youtube.com/vi/nzDCLv1gaCA/maxresdefault.jpg",
         awards: [
           {
-            name: "Best Short Program",
-            organization: "Busan Kids Wave",
+            name: "ECFA Award (Feature Kids)",
+            organization:
+              "Filem'on:International Children's Film Festival Brussels",
+            year: 2022,
+          },
+          {
+            name: "Audience Favourite",
+            organization: "Chicago International Children's Film Festival",
+            year: 2022,
+          },
+          {
+            name: "Best Actor Nominee",
+            organization: "Lithuanian Film Awards",
+            year: 2022,
+          },
+          {
+            name: "Best Cinematographer",
+            organization: "Lithuanian Film Awards",
             year: 2022,
           },
         ],
       },
       {
-        title: "Stardust Sleepover",
+        title: "A Butterfly's Heart",
         blurb:
-          "A bedtime-ready short filled with lullaby melodies and floating star critters.",
-        director: "Mina Koh",
-        country: "South Korea",
-        language: "Korean",
-        runtimeMinutes: 46,
-        link: "https://example.com/stardust-sleepover",
+          "Juozapas is a quiet boy who cultivates insects in an abandoned house. He has a big bulge under his weird sweater and the school’s tough kids call him “balloon”. Rugilè moves to town and becomes Juozapas’ friend. She is the first to discover his secret.",
+        director: "Inesa Kurklietyte",
+        country: "Lithuania",
+        language: "Lithuanian",
+        runtimeMinutes: 120,
+        link: "https://www.mewatch.sg/movie/A-Butterflys-Heart-435982",
         videoEmbed:
-          "https://www.youtube.com/embed/stardustsleepover?rel=0&modestbranding=1",
-        posterImage: "",
+          "https://www.youtube.com/embed/nzDCLv1gaCA?si=0ZKwnNRuLRMlaBMn",
+        posterImage: "https://img.youtube.com/vi/nzDCLv1gaCA/maxresdefault.jpg",
         awards: [
           {
-            name: "Official Selection",
-            organization: "Cannes Junior Nights",
-            year: 2024,
+            name: "ECFA Award (Feature Kids)",
+            organization:
+              "Filem'on:International Children's Film Festival Brussels",
+            year: 2022,
+          },
+          {
+            name: "Audience Favourite",
+            organization: "Chicago International Children's Film Festival",
+            year: 2022,
           },
         ],
       },
@@ -482,7 +498,7 @@ const playlistSeed = [
     ],
   },
   {
-    id: "giggle-gala",
+    id: "",
     title: "Giggle Gala",
     tagline: "Slapstick shorts and clever capers to spark belly laughs.",
     ageRange: "6 – 10 years",
@@ -614,6 +630,26 @@ const playlistSeed = [
     ageRange: "7 – 12 years",
     tags: ["Empathy", "Family Night", "Conversation"],
     films: [
+      {
+        title: "Confetti",
+        blurb:
+          "A determined mother moves from rural China to New York City in hopes of finding a special education program for her dyslexic daughter.",
+        director: "Ann Hu",
+        country: "USA",
+        language: "Chinese, English",
+        runtimeMinutes: 85,
+        link: "https://www.mewatch.sg/movie/Confetti-468752",
+        videoEmbed:
+          "https://www.youtube.com/embed/bsmmkmXEwk0?si=Blxwu5-BnTyrfazW",
+        posterImage: "https://img.youtube.com/vi/bsmmkmXEwk0/maxresdefault.jpg",
+        awards: [
+          {
+            name: "Audience Award",
+            organization: "Cannes Junior Nights",
+            year: 2023,
+          },
+        ],
+      },
       {
         title: "Lanterns in the Library",
         blurb:
