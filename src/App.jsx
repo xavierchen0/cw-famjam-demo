@@ -410,21 +410,6 @@ const playlistSeed = [
               "Filem'on:International Children's Film Festival Brussels",
             year: 2022,
           },
-          {
-            name: "Audience Favourite",
-            organization: "Chicago International Children's Film Festival",
-            year: 2022,
-          },
-          {
-            name: "Best Actor Nominee",
-            organization: "Lithuanian Film Awards",
-            year: 2022,
-          },
-          {
-            name: "Best Cinematographer",
-            organization: "Lithuanian Film Awards",
-            year: 2022,
-          },
         ],
       },
       {
@@ -492,83 +477,49 @@ const playlistSeed = [
     ],
   },
   {
-    id: "",
-    title: "Giggle Gala",
-    tagline: "Slapstick shorts and clever capers to spark belly laughs.",
-    ageRange: "6 – 10 years",
-    tags: ["Laughs", "Energy", "Rainy Day"],
+    id: "solace-playlist",
+    title: "Solace Stories",
+    tagline: "Where love mends, and time heals.",
+    // ageRange: "6 – 10 years",
+    tags: ["Solace"],
     films: [
       {
-        title: "Popcorn Pranksters",
+        title: "Roise & Frank",
         blurb:
-          "Two best friends rescue a cinema night with imaginative mischief.",
-        director: "Diego Martins",
-        country: "Brazil",
-        language: "Portuguese & English",
-        runtimeMinutes: 65,
-        link: "https://example.com/popcorn-pranksters",
+          "Recently widowed Róise is struggling with her grief following her husband's passing. However, when a stray dog starts to follow her around, she starts to believe that it might be the reincarnation of her husband.",
+        director: "Rachael Moriart and Peter Murphy",
+        country: "Ireland",
+        language: "English, Gaelic",
+        runtimeMinutes: 99,
+        link: "https://www.mewatch.sg/movie/Roise-and-Frank-416635",
         videoEmbed:
-          "https://www.youtube.com/embed/popcornpranksters?rel=0&modestbranding=1",
+          "https://www.youtube.com/embed/A5z58a_a4EE?si=F-BN5knEZBRX-iIV",
+        posterImage: "https://img.youtube.com/vi/A5z58a_a4EE/maxresdefault.jpg",
         awards: [
           {
-            name: "Best Ensemble Comedy",
-            organization: "TIFFkids",
-            year: 2021,
-          },
-        ],
-      },
-      {
-        title: "The Umbrella Parade",
-        blurb:
-          "Colorful umbrella creatures tumble through town with rhythmic giggles.",
-        director: "Aya Nakamori",
-        country: "Japan",
-        language: "Japanese",
-        runtimeMinutes: 52,
-        link: "https://example.com/umbrella-parade",
-        videoEmbed:
-          "https://www.youtube.com/embed/umbrellaparade?rel=0&modestbranding=1",
-        awards: [
-          {
-            name: "Jury Mention",
-            organization: "Cannes Junior Nights",
+            name: "Best Film Nominee",
+            organization: "Irish Film and Television Awards",
             year: 2023,
           },
         ],
       },
       {
-        title: "Whisker Whirl",
-        blurb: "A troupe of circus kittens learns timing the silly way.",
-        director: "Imani Brooks",
-        country: "United States",
-        language: "English",
-        runtimeMinutes: 70,
-        link: "https://example.com/whisker-whirl",
+        title: "Heavenly Nomadic",
+        blurb:
+          "A family of nomads dwelling high in the mountains of Kyrgyzstan doesn't need any of the conveniences of modern civilization in order to be happy. But progress is creeping into their lives regardless, destroying legends and traditions as it comes.",
+        director: "Mirlan Abdykalykov",
+        country: "Kyrgyzstan",
+        language: "Kyrgyz",
+        runtimeMinutes: 81,
+        link: "https://www.mewatch.sg/movie/Heavenly-Nomadic-508759",
         videoEmbed:
-          "https://www.youtube.com/embed/whiskerwhirl?rel=0&modestbranding=1",
+          "https://www.youtube.com/embed/APXgauNxhFw?si=OFun79XCSqE20X8z",
+        posterImage: "https://img.youtube.com/vi/APXgauNxhFw/maxresdefault.jpg",
         awards: [
           {
-            name: "Audience Favorite",
-            organization: "SXSW WonderKids",
-            year: 2022,
-          },
-        ],
-      },
-      {
-        title: "Balloon Buddies",
-        blurb: "Short, smart, and delightfully bouncy cartoon skits.",
-        director: "Noah Feld",
-        country: "Canada",
-        language: "English & French",
-        runtimeMinutes: 48,
-        link: "https://example.com/balloon-buddies",
-        videoEmbed:
-          "https://www.youtube.com/embed/balloonbuddies?rel=0&modestbranding=1",
-        awards: [
-          {
-            name: "Special Distinction",
-            organization: "Annecy Family Spotlight",
-            year: 2020,
+            name: "Kyrgyz Entry, Best Foreign Language Film",
+            organization: "88th Academy Awards",
+            year: 2015,
           },
         ],
       },
