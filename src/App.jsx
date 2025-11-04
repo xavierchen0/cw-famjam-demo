@@ -361,6 +361,59 @@ const IconPlayOutline = ({ className }) => (
   </svg>
 );
 
+const IconKids = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="7"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.25 9.5c1-2 3.35-3.3 4.75-3.3s3.75 1.3 4.75 3.3"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M6.25 9.75c-.25-1.5.95-3.2 2.7-3.7"
+      stroke="currentColor"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+    />
+    <path
+      d="M17.75 9.4c.2-1.3-.75-2.65-2.3-3.3"
+      stroke="currentColor"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+    />
+    <circle cx="9.5" cy="12.25" r="1" fill="currentColor" />
+    <circle cx="14.5" cy="12.25" r="1" fill="currentColor" />
+    <path
+      d="M9.25 14.5c.9.95 2.6.95 3.5 0"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+    />
+    <path
+      d="M7 18.75c2.4-1.5 7.6-1.5 10 0"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 const keywordOptions = ["Heartwarming", "Growth", "Solace"];
 
 const playlistSeed = [
@@ -1502,6 +1555,10 @@ export default function App() {
               CinemaWorld charm with community-powered insights so you can press
               play with confidence.
             </p>
+            <div className="mx-auto flex w-max items-center gap-3 rounded-2xl border border-[#7ad3a8] bg-[#d9f6e6] px-4 py-3 text-sm text-[#145c3a] shadow-sm">
+              <IconKids className="h-7 w-7 text-[#1e7a4c]" />
+              <span className="font-medium">All films are PG rated.</span>
+            </div>
           </div>
         </header>
 
