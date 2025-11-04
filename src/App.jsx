@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState } from "react";
+import logo from "./assset/cw_logo.svg";
 
 const IconSpark = ({ className }) => (
   <svg
@@ -37,13 +38,7 @@ const IconClock = ({ className }) => (
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >
-    <circle
-      cx="12"
-      cy="12"
-      r="8.25"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    />
+    <circle cx="12" cy="12" r="8.25" stroke="currentColor" strokeWidth="1.5" />
     <path
       d="M12 7.5v4.25l2.75 1.5"
       stroke="currentColor"
@@ -155,13 +150,7 @@ const IconCompass = ({ className }) => (
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >
-    <circle
-      cx="12"
-      cy="12"
-      r="7.5"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    />
+    <circle cx="12" cy="12" r="7.5" stroke="currentColor" strokeWidth="1.5" />
     <path
       d="m9.5 14.5 1-3 3-1-1 3-3 1Z"
       stroke="currentColor"
@@ -179,13 +168,7 @@ const IconLaugh = ({ className }) => (
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >
-    <circle
-      cx="12"
-      cy="12"
-      r="8"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    />
+    <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" />
     <path
       d="M15.25 12.75a3.25 3.25 0 1 1-6.5 0h6.5Z"
       stroke="currentColor"
@@ -244,207 +227,230 @@ const IconBook = ({ className }) => (
 );
 
 const keywordOptions = [
-  'Adventure',
-  'Heartwarming',
-  'Laughs',
-  'Music',
-  'Visuals',
-  'Learning',
+  "Adventure",
+  "Heartwarming",
+  "Laughs",
+  "Music",
+  "Visuals",
+  "Learning",
 ];
 
 const playlistSeed = [
   {
-    id: 'stellar-sleepovers',
-    title: 'Stellar Sleepovers',
-    tagline: 'Dreamy space adventures perfect for pajama nights.',
-    ageRange: '5 – 8 years',
-    runtime: '3 films • 4h 15m total',
-    tags: ['Adventure', 'Curiosity', 'Soothing'],
+    id: "stellar-sleepovers",
+    title: "Stellar Sleepovers",
+    tagline: "Dreamy space adventures perfect for pajama nights.",
+    ageRange: "5 – 8 years",
+    runtime: "3 films • 4h 15m total",
+    tags: ["Adventure", "Curiosity", "Soothing"],
     films: [
       {
-        title: 'Moonlight Mission',
-        blurb: 'A gentle sci-fi tale about a sibling duo learning teamwork on a lunar quest.',
+        title: "Moonlight Mission",
+        blurb:
+          "A gentle sci-fi tale about a sibling duo learning teamwork on a lunar quest.",
       },
       {
-        title: 'Comet Campfire',
-        blurb: 'Stories, snacks, and shimmering skies in a calm cosmic campground.',
+        title: "Comet Campfire",
+        blurb:
+          "Stories, snacks, and shimmering skies in a calm cosmic campground.",
       },
       {
-        title: 'Stardust Sleepover',
-        blurb: 'A bedtime-ready short filled with lullaby melodies and floating star critters.',
+        title: "Stardust Sleepover",
+        blurb:
+          "A bedtime-ready short filled with lullaby melodies and floating star critters.",
       },
     ],
     reviews: [
       {
-        reviewer: 'Camila R.',
+        reviewer: "Camila R.",
         rating: 5,
-        comment: 'Our twins loved the cozy glow and the songs are still stuck in our heads.',
-        keywords: ['Heartwarming', 'Music'],
+        comment:
+          "Our twins loved the cozy glow and the songs are still stuck in our heads.",
+        keywords: ["Heartwarming", "Music"],
       },
       {
-        reviewer: 'Jules P.',
+        reviewer: "Jules P.",
         rating: 4,
-        comment: 'Perfect wind-down vibe and a sweet reminder about sharing.',
-        keywords: ['Learning', 'Heartwarming'],
+        comment: "Perfect wind-down vibe and a sweet reminder about sharing.",
+        keywords: ["Learning", "Heartwarming"],
       },
       {
-        reviewer: 'Sal M.',
+        reviewer: "Sal M.",
         rating: 5,
-        comment: 'Spacey visuals without the big scares—exactly what we needed.',
-        keywords: ['Visuals', 'Adventure'],
+        comment:
+          "Spacey visuals without the big scares—exactly what we needed.",
+        keywords: ["Visuals", "Adventure"],
       },
       {
-        reviewer: 'Eli B.',
+        reviewer: "Eli B.",
         rating: 4,
-        comment: 'The quiet pacing was perfect for our sensory-sensitive kiddo.',
-        keywords: ['Adventure', 'Soothing'],
+        comment:
+          "The quiet pacing was perfect for our sensory-sensitive kiddo.",
+        keywords: ["Adventure", "Soothing"],
       },
       {
-        reviewer: 'Rina S.',
+        reviewer: "Rina S.",
         rating: 5,
-        comment: 'We ended the night making constellation snacks—huge hit.',
-        keywords: ['Learning', 'Curiosity'],
+        comment: "We ended the night making constellation snacks—huge hit.",
+        keywords: ["Learning", "Curiosity"],
       },
       {
-        reviewer: 'The Delgados',
+        reviewer: "The Delgados",
         rating: 4,
-        comment: 'Beautiful score and the stargazing tips were unexpectedly helpful.',
-        keywords: ['Music', 'Visuals'],
+        comment:
+          "Beautiful score and the stargazing tips were unexpectedly helpful.",
+        keywords: ["Music", "Visuals"],
       },
     ],
   },
   {
-    id: 'giggle-gala',
-    title: 'Giggle Gala',
-    tagline: 'Slapstick shorts and clever capers to spark belly laughs.',
-    ageRange: '6 – 10 years',
-    runtime: '4 films • 3h 40m total',
-    tags: ['Laughs', 'Energy', 'Rainy Day'],
+    id: "giggle-gala",
+    title: "Giggle Gala",
+    tagline: "Slapstick shorts and clever capers to spark belly laughs.",
+    ageRange: "6 – 10 years",
+    runtime: "4 films • 3h 40m total",
+    tags: ["Laughs", "Energy", "Rainy Day"],
     films: [
       {
-        title: 'Popcorn Pranksters',
-        blurb: 'Two best friends rescue a cinema night with imaginative mischief.',
+        title: "Popcorn Pranksters",
+        blurb:
+          "Two best friends rescue a cinema night with imaginative mischief.",
       },
       {
-        title: 'The Umbrella Parade',
-        blurb: 'Colorful umbrella creatures tumble through town with rhythmic giggles.',
+        title: "The Umbrella Parade",
+        blurb:
+          "Colorful umbrella creatures tumble through town with rhythmic giggles.",
       },
       {
-        title: 'Whisker Whirl',
-        blurb: 'A troupe of circus kittens learns timing the silly way.',
+        title: "Whisker Whirl",
+        blurb: "A troupe of circus kittens learns timing the silly way.",
       },
       {
-        title: 'Balloon Buddies',
-        blurb: 'Short, smart, and delightfully bouncy cartoon skits.',
+        title: "Balloon Buddies",
+        blurb: "Short, smart, and delightfully bouncy cartoon skits.",
       },
     ],
     reviews: [
       {
-        reviewer: 'Morgan L.',
+        reviewer: "Morgan L.",
         rating: 4,
-        comment: 'We paused twice because the kids were laughing too hard to hear the punchline.',
-        keywords: ['Laughs', 'Adventure'],
+        comment:
+          "We paused twice because the kids were laughing too hard to hear the punchline.",
+        keywords: ["Laughs", "Adventure"],
       },
       {
-        reviewer: 'Priya N.',
+        reviewer: "Priya N.",
         rating: 5,
-        comment: 'Even the grandparents chuckled—great for mixed ages.',
-        keywords: ['Heartwarming', 'Laughs'],
+        comment: "Even the grandparents chuckled—great for mixed ages.",
+        keywords: ["Heartwarming", "Laughs"],
       },
       {
-        reviewer: 'Amir H.',
+        reviewer: "Amir H.",
         rating: 4,
-        comment: 'High-energy without feeling chaotic. The mini-games between shorts were a hit.',
-        keywords: ['Energy', 'Laughs'],
+        comment:
+          "High-energy without feeling chaotic. The mini-games between shorts were a hit.",
+        keywords: ["Energy", "Laughs"],
       },
       {
-        reviewer: 'Kendall T.',
+        reviewer: "Kendall T.",
         rating: 5,
-        comment: 'Zero downtime—our 7- and 10-year-old laughed the whole way through.',
-        keywords: ['Laughs', 'Energy'],
+        comment:
+          "Zero downtime—our 7- and 10-year-old laughed the whole way through.",
+        keywords: ["Laughs", "Energy"],
       },
       {
-        reviewer: 'Uncle Jay',
+        reviewer: "Uncle Jay",
         rating: 4,
-        comment: 'The physical comedy landed for adults too. Balloon Buddies is an instant classic.',
-        keywords: ['Heartwarming', 'Laughs'],
+        comment:
+          "The physical comedy landed for adults too. Balloon Buddies is an instant classic.",
+        keywords: ["Heartwarming", "Laughs"],
       },
       {
-        reviewer: 'Mara & Lee',
+        reviewer: "Mara & Lee",
         rating: 5,
-        comment: 'Perfect rainy-day marathon. Loved the dance-off prompt at the end credits.',
-        keywords: ['Music', 'Energy'],
+        comment:
+          "Perfect rainy-day marathon. Loved the dance-off prompt at the end credits.",
+        keywords: ["Music", "Energy"],
       },
     ],
   },
   {
-    id: 'kindness-chronicles',
-    title: 'Kindness Chronicles',
-    tagline: 'Stories that celebrate empathy, big feelings, and brave choices.',
-    ageRange: '7 – 12 years',
-    runtime: '3 films • 4h 50m total',
-    tags: ['Empathy', 'Family Night', 'Conversation'],
+    id: "kindness-chronicles",
+    title: "Kindness Chronicles",
+    tagline: "Stories that celebrate empathy, big feelings, and brave choices.",
+    ageRange: "7 – 12 years",
+    runtime: "3 films • 4h 50m total",
+    tags: ["Empathy", "Family Night", "Conversation"],
     films: [
       {
-        title: 'Lanterns in the Library',
-        blurb: 'A friendship forms while restoring a community library by lantern light.',
+        title: "Lanterns in the Library",
+        blurb:
+          "A friendship forms while restoring a community library by lantern light.",
       },
       {
-        title: 'Garden of Small Giants',
-        blurb: 'Micro-adventures that show how little acts of kindness grow big hearts.',
+        title: "Garden of Small Giants",
+        blurb:
+          "Micro-adventures that show how little acts of kindness grow big hearts.",
       },
       {
-        title: 'The Bridge Builders',
-        blurb: 'An animated journey about listening, apologising, and starting fresh.',
+        title: "The Bridge Builders",
+        blurb:
+          "An animated journey about listening, apologising, and starting fresh.",
       },
     ],
     reviews: [
       {
-        reviewer: 'Jonah F.',
+        reviewer: "Jonah F.",
         rating: 5,
-        comment: 'Great conversation starters—our 9-year-old opened up about school.',
-        keywords: ['Learning', 'Heartwarming'],
+        comment:
+          "Great conversation starters—our 9-year-old opened up about school.",
+        keywords: ["Learning", "Heartwarming"],
       },
       {
-        reviewer: 'Steph W.',
+        reviewer: "Steph W.",
         rating: 4,
-        comment: 'Beautiful pacing and music. Maybe a tad long for younger kids but worth it.',
-        keywords: ['Music', 'Visuals'],
+        comment:
+          "Beautiful pacing and music. Maybe a tad long for younger kids but worth it.",
+        keywords: ["Music", "Visuals"],
       },
       {
-        reviewer: 'Nia K.',
+        reviewer: "Nia K.",
         rating: 5,
-        comment: 'We now have a weekly “kindness mission.” The post-film prompts help a lot.',
-        keywords: ['Learning', 'Heartwarming'],
+        comment:
+          "We now have a weekly “kindness mission.” The post-film prompts help a lot.",
+        keywords: ["Learning", "Heartwarming"],
       },
       {
-        reviewer: 'Amelia O.',
+        reviewer: "Amelia O.",
         rating: 4,
-        comment: 'A little long, but the conversation cards kept our preteen engaged.',
-        keywords: ['Conversation', 'Learning'],
+        comment:
+          "A little long, but the conversation cards kept our preteen engaged.",
+        keywords: ["Conversation", "Learning"],
       },
       {
-        reviewer: 'Parents of Room 5',
+        reviewer: "Parents of Room 5",
         rating: 5,
-        comment: 'Used this for a classroom family night—tears, laughs, everything. Highly recommend.',
-        keywords: ['Family Night', 'Heartwarming'],
+        comment:
+          "Used this for a classroom family night—tears, laughs, everything. Highly recommend.",
+        keywords: ["Family Night", "Heartwarming"],
       },
       {
-        reviewer: 'Zhang Family',
+        reviewer: "Zhang Family",
         rating: 4,
-        comment: 'Loved the multicultural touches and the empathy moments felt authentic.',
-        keywords: ['Empathy', 'Visuals'],
+        comment:
+          "Loved the multicultural touches and the empathy moments felt authentic.",
+        keywords: ["Empathy", "Visuals"],
       },
     ],
   },
 ];
 
 const moodFilters = [
-  { id: 'all', label: 'Show All', Icon: IconSpark },
-  { id: 'Adventure', label: 'Adventure', Icon: IconCompass },
-  { id: 'Laughs', label: 'Laughs', Icon: IconLaugh },
-  { id: 'Heartwarming', label: 'Cozy', Icon: IconHeart },
-  { id: 'Learning', label: 'Learning', Icon: IconBook },
+  { id: "all", label: "Show All", Icon: IconSpark },
+  { id: "Adventure", label: "Adventure", Icon: IconCompass },
+  { id: "Laughs", label: "Laughs", Icon: IconLaugh },
+  { id: "Heartwarming", label: "Cozy", Icon: IconHeart },
+  { id: "Learning", label: "Learning", Icon: IconBook },
 ];
 
 function getReviewStats(reviews) {
@@ -462,15 +468,20 @@ function getReviewStats(reviews) {
   };
 }
 
-function PlaylistCard({ playlist, stats, draft, onDraftChange, onSubmitReview }) {
+function PlaylistCard({
+  playlist,
+  stats,
+  draft,
+  onDraftChange,
+  onSubmitReview,
+}) {
   const topReviewCount = 3;
   const topReviews = playlist.reviews.slice(0, topReviewCount);
   const extraReviews = playlist.reviews.slice(topReviewCount);
   const [showAllReviews, setShowAllReviews] = useState(false);
   const remainingCount = extraReviews.length;
   const hasExtraReviews = remainingCount > 0;
-  const remainingLabel = remainingCount === 1 ? 'review' : 'reviews';
-
+  const remainingLabel = remainingCount === 1 ? "review" : "reviews";
 
   return (
     <section className="group rounded-3xl border border-brand-gold/15 bg-gradient-to-br from-brand-ink via-brand-ink to-black/70 p-8 shadow-[0_25px_45px_-35px_rgba(242,229,170,0.55)] transition-all duration-500 hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-glow">
@@ -535,15 +546,15 @@ function PlaylistCard({ playlist, stats, draft, onDraftChange, onSubmitReview })
               </p>
             </div>
             <p className="text-3xl font-semibold text-brand-cream">
-              {stats.total ? stats.averageRating.toFixed(1) : '—'}
+              {stats.total ? stats.averageRating.toFixed(1) : "—"}
               <span className="text-base font-normal text-brand-cream/70">
                 /5
               </span>
             </p>
             <p className="text-sm text-brand-cream/70">
               {stats.total
-                ? `${stats.total} famil${stats.total === 1 ? 'y' : 'ies'} added reviews`
-                : 'No reviews yet'}
+                ? `${stats.total} famil${stats.total === 1 ? "y" : "ies"} added reviews`
+                : "No reviews yet"}
             </p>
           </div>
 
@@ -570,8 +581,8 @@ function PlaylistCard({ playlist, stats, draft, onDraftChange, onSubmitReview })
                           key={star}
                           className={
                             star < review.rating
-                              ? 'text-brand-cream'
-                              : 'text-brand-cream/20'
+                              ? "text-brand-cream"
+                              : "text-brand-cream/20"
                           }
                         >
                           ★
@@ -614,8 +625,8 @@ function PlaylistCard({ playlist, stats, draft, onDraftChange, onSubmitReview })
                             key={star}
                             className={
                               star < review.rating
-                                ? 'text-brand-cream'
-                                : 'text-brand-cream/20'
+                                ? "text-brand-cream"
+                                : "text-brand-cream/20"
                             }
                           >
                             ★
@@ -649,7 +660,7 @@ function PlaylistCard({ playlist, stats, draft, onDraftChange, onSubmitReview })
                 className="inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.35em] text-brand-gold transition hover:text-brand-cream"
               >
                 {showAllReviews
-                  ? 'Show fewer reviews'
+                  ? "Show fewer reviews"
                   : `Show ${remainingCount} more ${remainingLabel}`}
               </button>
             )}
@@ -759,8 +770,8 @@ function PlaylistCard({ playlist, stats, draft, onDraftChange, onSubmitReview })
                       }}
                       className={`rounded-full border px-3 py-1 text-[0.65rem] uppercase tracking-[0.25em] transition ${
                         isSelected
-                          ? 'border-brand-gold bg-brand-gold/20 text-brand-cream'
-                          : 'border-brand-gold/30 text-brand-cream/60 hover:border-brand-gold/50 hover:text-brand-cream'
+                          ? "border-brand-gold bg-brand-gold/20 text-brand-cream"
+                          : "border-brand-gold/30 text-brand-cream/60 hover:border-brand-gold/50 hover:text-brand-cream"
                       }`}
                     >
                       {keyword}
@@ -785,17 +796,17 @@ function PlaylistCard({ playlist, stats, draft, onDraftChange, onSubmitReview })
 
 export default function App() {
   const [collections, setCollections] = useState(playlistSeed);
-  const [selectedMood, setSelectedMood] = useState('all');
+  const [selectedMood, setSelectedMood] = useState("all");
   const [drafts, setDrafts] = useState(() =>
     Object.fromEntries(
       playlistSeed.map((playlist) => [
         playlist.id,
-        { name: '', rating: 4, comment: '', keywords: [] },
+        { name: "", rating: 4, comment: "", keywords: [] },
       ]),
     ),
   );
   const filteredCollections = useMemo(() => {
-    if (selectedMood === 'all') {
+    if (selectedMood === "all") {
       return collections;
     }
 
@@ -836,7 +847,7 @@ export default function App() {
 
     setDrafts((prev) => ({
       ...prev,
-      [playlistId]: { name: '', rating: 4, comment: '', keywords: [] },
+      [playlistId]: { name: "", rating: 4, comment: "", keywords: [] },
     }));
   };
 
@@ -850,12 +861,7 @@ export default function App() {
       <div className="relative z-10">
         <nav className="flex items-center justify-between px-6 pt-8 sm:px-10">
           <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-brand-gold/40 bg-brand-gold/10 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-brand-cream/70">
-              Logo
-            </div>
-            <span className="text-xs uppercase tracking-[0.4em] text-brand-cream/60">
-              CinemaWorld Asia
-            </span>
+            <img src={logo} alt="cinemaworldLogo" />
           </div>
         </nav>
         <header className="px-6 pt-12 pb-14 text-center sm:px-10">
@@ -894,8 +900,8 @@ export default function App() {
                 const { Icon } = filter;
                 const isActive = selectedMood === filter.id;
                 const iconClasses = isActive
-                  ? 'text-brand-gold'
-                  : 'text-brand-cream/70';
+                  ? "text-brand-gold"
+                  : "text-brand-cream/70";
                 return (
                   <button
                     key={filter.id}
@@ -903,8 +909,8 @@ export default function App() {
                     onClick={() => setSelectedMood(filter.id)}
                     className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.3em] transition ${
                       isActive
-                        ? 'border-brand-gold bg-brand-gold/20 text-brand-cream'
-                        : 'border-brand-gold/30 text-brand-cream/60 hover:border-brand-gold/60 hover:text-brand-cream'
+                        ? "border-brand-gold bg-brand-gold/20 text-brand-cream"
+                        : "border-brand-gold/30 text-brand-cream/60 hover:border-brand-gold/60 hover:text-brand-cream"
                     }`}
                   >
                     <span className="flex items-center gap-2">
@@ -930,8 +936,8 @@ export default function App() {
 
           {!filteredCollections.length && (
             <div className="rounded-3xl border border-brand-gold/15 bg-brand-black/40 p-12 text-center text-brand-cream/70">
-              No playlists match that mood just yet—try another filter or add your
-              own film picks soon.
+              No playlists match that mood just yet—try another filter or add
+              your own film picks soon.
             </div>
           )}
         </main>
