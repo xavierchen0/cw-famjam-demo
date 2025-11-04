@@ -1090,9 +1090,9 @@ function PlaylistCard({
                   </label>
 
                   <label className="block">
-                    <span className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
-                      Kid-friendly score
-                    </span>
+                  <span className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
+                    Family Rating
+                  </span>
                     <div className="mt-3 flex items-center gap-3">
                       <input
                         type="range"
