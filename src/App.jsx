@@ -388,6 +388,7 @@ const playlistSeed = [
         link: "https://www.mewatch.sg/movie/Confetti-468752",
         videoEmbed:
           "https://www.youtube.com/embed/bsmmkmXEwk0?si=Blxwu5-BnTyrfazW",
+        posterImage: "https://img.youtube.com/vi/bsmmkmXEwk0/maxresdefault.jpg",
         awards: [
           {
             name: "Audience Award",
@@ -407,6 +408,7 @@ const playlistSeed = [
         link: "https://example.com/comet-campfire",
         videoEmbed:
           "https://www.youtube.com/embed/cometcampfire?rel=0&modestbranding=1",
+        posterImage: "",
         awards: [
           {
             name: "Best Short Program",
@@ -426,6 +428,7 @@ const playlistSeed = [
         link: "https://example.com/stardust-sleepover",
         videoEmbed:
           "https://www.youtube.com/embed/stardustsleepover?rel=0&modestbranding=1",
+        posterImage: "",
         awards: [
           {
             name: "Official Selection",
@@ -856,6 +859,7 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
             runtimeMinutes,
             link,
             videoEmbed,
+            posterImage,
             awards = [],
           } = film;
           const hasAwards = Array.isArray(awards) && awards.length > 0;
@@ -994,8 +998,15 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
                   </div>
                 ) : (
                   <div className="relative">
-                    <div className="flex h-64 items-center justify-center rounded-2xl border border-brand-gold/15 bg-brand-gold/5 text-xs uppercase tracking-[0.3em] text-brand-cream/40 sm:h-[22rem]">
-                      GIF placeholder
+                    <div className="flex h-64 items-center justify-center overflow-hidden rounded-2xl border border-brand-gold/15 bg-brand-gold/5 sm:h-[22rem]">
+                      {posterImage ? (
+                        <img
+                          src={posterImage}
+                          alt={`${title} poster`}
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                      ) : null}
                     </div>
                     {videoEmbed ? (
                       <button
