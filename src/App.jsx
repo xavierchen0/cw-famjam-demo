@@ -362,7 +362,6 @@ const playlistSeed = [
     title: "Stellar Sleepovers",
     tagline: "Dreamy space adventures perfect for pajama nights.",
     ageRange: "5 – 8 years",
-    runtime: "3 films • 4h 15m total",
     tags: ["Adventure", "Curiosity", "Soothing"],
     films: [
       {
@@ -372,7 +371,7 @@ const playlistSeed = [
         director: "Ari Vega",
         country: "Singapore",
         language: "English & Mandarin",
-        runtime: "1h 12m",
+        runtimeMinutes: 72,
         awards: ["Cannes Junior Nights - Audience Award"],
       },
       {
@@ -382,7 +381,7 @@ const playlistSeed = [
         director: "Leila Tan",
         country: "Philippines",
         language: "English & Tagalog",
-        runtime: "58m",
+        runtimeMinutes: 58,
         awards: ["Busan Kids Wave - Best Short Program"],
       },
       {
@@ -392,7 +391,7 @@ const playlistSeed = [
         director: "Mina Koh",
         country: "South Korea",
         language: "Korean",
-        runtime: "46m",
+        runtimeMinutes: 46,
         awards: ["Cannes Junior Nights - Official Selection"],
       },
     ],
@@ -444,7 +443,6 @@ const playlistSeed = [
     title: "Giggle Gala",
     tagline: "Slapstick shorts and clever capers to spark belly laughs.",
     ageRange: "6 – 10 years",
-    runtime: "4 films • 3h 40m total",
     tags: ["Laughs", "Energy", "Rainy Day"],
     films: [
       {
@@ -454,7 +452,7 @@ const playlistSeed = [
         director: "Diego Martins",
         country: "Brazil",
         language: "Portuguese & English",
-        runtime: "1h 05m",
+        runtimeMinutes: 65,
         awards: ["TIFFkids - Best Ensemble Comedy"],
       },
       {
@@ -464,7 +462,7 @@ const playlistSeed = [
         director: "Aya Nakamori",
         country: "Japan",
         language: "Japanese",
-        runtime: "52m",
+        runtimeMinutes: 52,
         awards: ["Cannes Junior Nights - Jury Mention"],
       },
       {
@@ -473,7 +471,7 @@ const playlistSeed = [
         director: "Imani Brooks",
         country: "United States",
         language: "English",
-        runtime: "1h 10m",
+        runtimeMinutes: 70,
         awards: ["SXSW WonderKids - Audience Favorite"],
       },
       {
@@ -482,7 +480,7 @@ const playlistSeed = [
         director: "Noah Feld",
         country: "Canada",
         language: "English & French",
-        runtime: "48m",
+        runtimeMinutes: 48,
         awards: ["Annecy Family Spotlight - Special Distinction"],
       },
     ],
@@ -535,7 +533,6 @@ const playlistSeed = [
     title: "Kindness Chronicles",
     tagline: "Stories that celebrate empathy, big feelings, and brave choices.",
     ageRange: "7 – 12 years",
-    runtime: "3 films • 4h 50m total",
     tags: ["Empathy", "Family Night", "Conversation"],
     films: [
       {
@@ -545,7 +542,7 @@ const playlistSeed = [
         director: "Siti Rahman",
         country: "Malaysia",
         language: "English & Malay",
-        runtime: "1h 20m",
+        runtimeMinutes: 80,
         awards: ["Berlinale Generation - Crystal Bear Nominee"],
       },
       {
@@ -555,7 +552,7 @@ const playlistSeed = [
         director: "Petra Milos",
         country: "Croatia",
         language: "Croatian & English",
-        runtime: "54m",
+        runtimeMinutes: 54,
         awards: ["Cannes Junior Nights - Storytelling Award"],
       },
       {
@@ -565,7 +562,7 @@ const playlistSeed = [
         director: "Linh Tran",
         country: "Vietnam",
         language: "Vietnamese",
-        runtime: "1h 35m",
+        runtimeMinutes: 95,
         awards: ["Tribeca Family - Grand Prize"],
       },
     ],
@@ -639,6 +636,54 @@ function getReviewStats(reviews) {
   };
 }
 
+function formatRuntime(minutes) {
+  if (!Number.isFinite(minutes) || minutes <= 0) {
+    return "TBA";
+  }
+
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = Math.round(minutes % 60);
+  const parts = [];
+  if (hours) {
+    parts.push(`${hours}h`);
+  }
+  if (remainingMinutes) {
+    parts.push(`${remainingMinutes}m`);
+  }
+
+  if (!parts.length) {
+    return "0m";
+  }
+
+  return parts.join(" ");
+}
+
+function summarizePlaylistRuntime(films) {
+  const filmCount = films.length;
+  const totalMinutes = films.reduce(
+    (sum, film) => sum + (Number.isFinite(film.runtimeMinutes) ? film.runtimeMinutes : 0),
+    0,
+  );
+
+  if (!filmCount) {
+    return { label: "No films yet", totalMinutes: 0 };
+  }
+
+  const filmLabel = `${filmCount} ${filmCount === 1 ? "film" : "films"}`;
+
+  if (!totalMinutes) {
+    return {
+      label: `${filmLabel} • Runtime TBA`,
+      totalMinutes: 0,
+    };
+  }
+
+  return {
+    label: `${filmLabel} • ${formatRuntime(totalMinutes)} total`,
+    totalMinutes,
+  };
+}
+
 function FilmCarousel({ films, autoInterval = 6000 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -701,10 +746,17 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
             director,
             country,
             language,
-            runtime,
+            runtimeMinutes,
             awards = [],
           } = film;
           const hasAwards = Array.isArray(awards) && awards.length > 0;
+          const hasRuntime =
+            Number.isFinite(runtimeMinutes) && runtimeMinutes > 0;
+          const runtimeLabel = !hasRuntime
+            ? "TBA"
+            : runtimeMinutes >= 60
+              ? `${formatRuntime(runtimeMinutes)} (${runtimeMinutes} min)`
+              : `${runtimeMinutes} min`;
 
           return (
             <div key={title} className="min-w-full p-6 sm:p-8 lg:p-10">
@@ -726,7 +778,7 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
                           Runtime
                         </p>
                         <p className="font-medium text-brand-cream">
-                          {runtime || "TBA"}
+                          {runtimeLabel}
                         </p>
                       </div>
                     </div>
@@ -846,6 +898,9 @@ function PlaylistCard({
   const hasExtraReviews = remainingCount > 0;
   const remainingLabel = remainingCount === 1 ? "review" : "reviews";
   const formId = `${playlist.id}-review-form`;
+  const { label: playlistRuntimeLabel } = summarizePlaylistRuntime(
+    playlist.films,
+  );
 
   return (
     <section className="group rounded-3xl border border-brand-gold/15 bg-gradient-to-br from-brand-ink via-brand-ink to-black/70 p-8 shadow-[0_25px_45px_-35px_rgba(242,229,170,0.55)] transition-all duration-500 hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-glow">
@@ -868,7 +923,9 @@ function PlaylistCard({
               Runtime
             </p>
           </div>
-          <p className="mt-2 text-sm text-brand-cream/80">{playlist.runtime}</p>
+          <p className="mt-2 text-sm text-brand-cream/80">
+            {playlistRuntimeLabel}
+          </p>
         </div>
       </header>
 
