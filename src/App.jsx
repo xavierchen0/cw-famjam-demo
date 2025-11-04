@@ -569,11 +569,11 @@ const playlistSeed = [
     ],
   },
   {
-    id: "kindness-chronicles",
-    title: "Kindness Chronicles",
-    tagline: "Stories that celebrate empathy, big feelings, and brave choices.",
-    ageRange: "7 – 12 years",
-    tags: ["Empathy", "Family Night", "Conversation"],
+    id: "growth-playlist",
+    title: "Journeys of Growth",
+    tagline: "Becoming your best self, one story at a time.",
+    // ageRange: "7 – 12 years",
+    tags: ["Growth"],
     films: [
       {
         title: "Confetti",
@@ -596,61 +596,38 @@ const playlistSeed = [
         ],
       },
       {
-        title: "Lanterns in the Library",
+        title: "Binti",
         blurb:
-          "A friendship forms while restoring a community library by lantern light.",
-        director: "Siti Rahman",
-        country: "Malaysia",
-        language: "English & Malay",
-        runtimeMinutes: 80,
-        link: "https://example.com/lanterns-in-the-library",
+          "A 12 -year-old vlogger plots a scheme with her new friend to bring their parents together to save her future.",
+        director: "Frederike Migom",
+        country: "Belgium, Netherlands",
+        language: "Dutch",
+        runtimeMinutes: 99,
+        link: "https://www.mewatch.sg/movie/Binti-401230",
         videoEmbed:
-          "https://www.youtube.com/embed/lanternsinthelibrary?rel=0&modestbranding=1",
+          "https://www.youtube.com/embed/s0s_pMBsK0k?si=FHhSzebBf2GX0KoM",
+        posterImage: "https://img.youtube.com/vi/s0s_pMBsK0k/maxresdefault.jpg",
         awards: [
           {
-            name: "Crystal Bear Nominee",
-            organization: "Berlinale Generation",
-            year: 2024,
+            name: "Best Film, Ale Kino!",
+            organization: "International Young Audience Film Festival",
+            year: 2019,
           },
         ],
       },
       {
-        title: "Garden of Small Giants",
+        title: "What's for Dinner, Mom?",
         blurb:
-          "Micro-adventures that show how little acts of kindness grow big hearts.",
-        director: "Petra Milos",
-        country: "Croatia",
-        language: "Croatian & English",
-        runtimeMinutes: 54,
-        link: "https://example.com/garden-of-small-giants",
+          "Sisters Tae and Yo return to their childhood home and discover a box of recipes and letters from their late Japanese mother. As Tae uncovers her mother’s hidden struggles, she journeys to Taiwan to retrace her past through memory and food.",
+        director: "Mitsuhito Shiraha",
+        country: "Japan",
+        language: "Japanese, Taiwanese",
+        runtimeMinutes: 117,
+        link: "https://www.mewatch.sg/movie/Whats-For-Dinner-Mom-545228",
         videoEmbed:
-          "https://www.youtube.com/embed/gardenofsmallgiants?rel=0&modestbranding=1",
-        awards: [
-          {
-            name: "Storytelling Award",
-            organization: "Cannes Junior Nights",
-            year: 2022,
-          },
-        ],
-      },
-      {
-        title: "The Bridge Builders",
-        blurb:
-          "An animated journey about listening, apologising, and starting fresh.",
-        director: "Linh Tran",
-        country: "Vietnam",
-        language: "Vietnamese",
-        runtimeMinutes: 95,
-        link: "https://example.com/the-bridge-builders",
-        videoEmbed:
-          "https://www.youtube.com/embed/thebridgebuilders?rel=0&modestbranding=1",
-        awards: [
-          {
-            name: "Grand Prize",
-            organization: "Tribeca Family",
-            year: 2023,
-          },
-        ],
+          "https://www.youtube.com/embed/CrHuQW1i-4E?si=lw5WyUjhoyOo0bY6",
+        posterImage: "https://img.youtube.com/vi/CrHuQW1i-4E/maxresdefault.jpg",
+        awards: [],
       },
     ],
     reviews: [
