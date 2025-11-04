@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import logo from "./assset/cw_logo.svg";
 
 const IconSpark = ({ className }) => (
@@ -598,9 +599,11 @@ function PlaylistCard({
   const topReviews = playlist.reviews.slice(0, topReviewCount);
   const extraReviews = playlist.reviews.slice(topReviewCount);
   const [showAllReviews, setShowAllReviews] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const remainingCount = extraReviews.length;
   const hasExtraReviews = remainingCount > 0;
   const remainingLabel = remainingCount === 1 ? "review" : "reviews";
+  const formId = `${playlist.id}-review-form`;
 
   return (
     <section className="group rounded-3xl border border-brand-gold/15 bg-gradient-to-br from-brand-ink via-brand-ink to-black/70 p-8 shadow-[0_25px_45px_-35px_rgba(242,229,170,0.55)] transition-all duration-500 hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-glow">
@@ -642,83 +645,58 @@ function PlaylistCard({
         <FilmCarousel films={playlist.films} />
       </div>
 
-      <div className="mt-10 grid gap-8 border-t border-brand-gold/10 pt-8 lg:grid-cols-[1.2fr_1fr]">
-        <div>
-          <div className="flex flex-col gap-3 rounded-2xl border border-brand-gold/10 bg-brand-black/50 p-6">
-            <div className="flex items-center gap-2 text-brand-gold">
-              <IconMedal className="h-5 w-5" />
-              <p className="text-xs uppercase tracking-[0.25em]">
-                Family Rating
-              </p>
-            </div>
-            <p className="text-3xl font-semibold text-brand-cream">
-              {stats.total ? stats.averageRating.toFixed(1) : "—"}
-              <span className="text-base font-normal text-brand-cream/70">
-                /5
-              </span>
-            </p>
-            <p className="text-sm text-brand-cream/70">
-              {stats.total
-                ? `${stats.total} famil${stats.total === 1 ? "y" : "ies"} added reviews`
-                : "No reviews yet"}
-            </p>
-          </div>
+      <div className="mt-10 border-t border-brand-gold/10 pt-8">
+        <div className="flex justify-center">
+          <button
+            type="button"
+            onClick={() => setIsFormOpen((previous) => !previous)}
+            className="flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-black/40 px-5 py-3 text-xs uppercase tracking-[0.35em] text-brand-cream transition hover:border-brand-gold/80 hover:text-brand-gold"
+            aria-expanded={isFormOpen}
+            aria-controls={formId}
+          >
+            <IconNote className="h-4 w-4" />
+            {isFormOpen ? "Hide review form" : "Share your family's take"}
+          </button>
+        </div>
 
-          <div className="mt-6 space-y-4">
-            <div className="flex items-center gap-2 text-brand-gold">
-              <IconChat className="h-4 w-4" />
-              <p className="text-xs uppercase tracking-[0.35em]">
-                Family Reviews
+        <motion.div
+          layout
+          className={`mt-8 grid gap-8 ${
+            isFormOpen ? "lg:grid-cols-[1.2fr_1fr]" : ""
+          }`}
+        >
+          <motion.div layout>
+            <div className="flex flex-col gap-3 rounded-2xl border border-brand-gold/10 bg-brand-black/50 p-6">
+              <div className="flex items-center gap-2 text-brand-gold">
+                <IconMedal className="h-5 w-5" />
+                <p className="text-xs uppercase tracking-[0.25em]">
+                  Family Rating
+                </p>
+              </div>
+              <p className="text-3xl font-semibold text-brand-cream">
+                {stats.total ? stats.averageRating.toFixed(1) : "—"}
+                <span className="text-base font-normal text-brand-cream/70">
+                  /5
+                </span>
+              </p>
+              <p className="text-sm text-brand-cream/70">
+                {stats.total
+                  ? `${stats.total} famil${stats.total === 1 ? "y" : "ies"} added reviews`
+                  : "No reviews yet"}
               </p>
             </div>
-            <ul className="space-y-4">
-              {topReviews.map((review, index) => (
-                <li
-                  key={`${review.reviewer}-top-${index}`}
-                  className="rounded-2xl border border-brand-gold/10 bg-brand-black/40 p-5"
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <p className="text-sm font-medium text-brand-cream">
-                      {review.reviewer}
-                    </p>
-                    <div className="flex items-center gap-1 text-brand-cream">
-                      {Array.from({ length: 5 }).map((_, star) => (
-                        <span
-                          key={star}
-                          className={
-                            star < review.rating
-                              ? "text-brand-cream"
-                              : "text-brand-cream/20"
-                          }
-                        >
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <p className="mt-2 text-sm text-brand-cream/80">
-                    {review.comment}
-                  </p>
-                  {review.keywords?.length ? (
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {review.keywords.map((keyword) => (
-                        <span
-                          key={keyword}
-                          className="rounded-full bg-brand-gold/15 px-2.5 py-1 text-[0.65rem] uppercase tracking-[0.25em] text-brand-cream/75"
-                        >
-                          {keyword}
-                        </span>
-                      ))}
-                    </div>
-                  ) : null}
-                </li>
-              ))}
-            </ul>
-            {hasExtraReviews && showAllReviews && (
+
+            <div className="mt-6 space-y-4">
+              <div className="flex items-center gap-2 text-brand-gold">
+                <IconChat className="h-4 w-4" />
+                <p className="text-xs uppercase tracking-[0.35em]">
+                  Family Reviews
+                </p>
+              </div>
               <ul className="space-y-4">
-                {extraReviews.map((review, index) => (
+                {topReviews.map((review, index) => (
                   <li
-                    key={`${review.reviewer}-extra-${index}`}
+                    key={`${review.reviewer}-top-${index}`}
                     className="rounded-2xl border border-brand-gold/10 bg-brand-black/40 p-5"
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
@@ -758,143 +736,204 @@ function PlaylistCard({
                   </li>
                 ))}
               </ul>
-            )}
-            {hasExtraReviews && (
-              <button
-                type="button"
-                onClick={() => setShowAllReviews((prev) => !prev)}
-                className="inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.35em] text-brand-gold transition hover:text-brand-cream"
+              {hasExtraReviews && showAllReviews && (
+                <ul className="space-y-4">
+                  {extraReviews.map((review, index) => (
+                    <li
+                      key={`${review.reviewer}-extra-${index}`}
+                      className="rounded-2xl border border-brand-gold/10 bg-brand-black/40 p-5"
+                    >
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-sm font-medium text-brand-cream">
+                          {review.reviewer}
+                        </p>
+                        <div className="flex items-center gap-1 text-brand-cream">
+                          {Array.from({ length: 5 }).map((_, star) => (
+                            <span
+                              key={star}
+                              className={
+                                star < review.rating
+                                  ? "text-brand-cream"
+                                  : "text-brand-cream/20"
+                              }
+                            >
+                              ★
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <p className="mt-2 text-sm text-brand-cream/80">
+                        {review.comment}
+                      </p>
+                      {review.keywords?.length ? (
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {review.keywords.map((keyword) => (
+                            <span
+                              key={keyword}
+                              className="rounded-full bg-brand-gold/15 px-2.5 py-1 text-[0.65rem] uppercase tracking-[0.25em] text-brand-cream/75"
+                            >
+                              {keyword}
+                            </span>
+                          ))}
+                        </div>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {hasExtraReviews && (
+                <button
+                  type="button"
+                  onClick={() => setShowAllReviews((prev) => !prev)}
+                  className="inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.35em] text-brand-gold transition hover:text-brand-cream"
+                >
+                  {showAllReviews
+                    ? "Show fewer reviews"
+                    : `Show ${remainingCount} more ${remainingLabel}`}
+                </button>
+              )}
+            </div>
+          </motion.div>
+
+          <AnimatePresence initial={false} mode="wait">
+            {isFormOpen ? (
+              <motion.div
+                key="review-form"
+                layout
+                initial={{ opacity: 0, y: -16, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -12, scale: 0.98 }}
+                transition={{ duration: 0.28, ease: [0.22, 0.61, 0.36, 1] }}
+                className="rounded-2xl border border-brand-gold/10 bg-brand-black/50 p-6"
               >
-                {showAllReviews
-                  ? "Show fewer reviews"
-                  : `Show ${remainingCount} more ${remainingLabel}`}
-              </button>
-            )}
-          </div>
-        </div>
+                <div className="flex items-center gap-2 text-brand-gold">
+                  <IconNote className="h-5 w-5" />
+                  <h3 className="text-lg font-semibold text-brand-gold">
+                    Share your family&apos;s take
+                  </h3>
+                </div>
+                <p className="mt-1 text-sm text-brand-cream/60">
+                  Add a quick score, highlight what stood out, and help other families
+                  choose confidently.
+                </p>
 
-        <div className="rounded-2xl border border-brand-gold/10 bg-brand-black/50 p-6">
-          <div className="flex items-center gap-2 text-brand-gold">
-            <IconNote className="h-5 w-5" />
-            <h3 className="text-lg font-semibold">
-              Share your family&apos;s take
-            </h3>
-          </div>
-          <p className="mt-1 text-sm text-brand-cream/60">
-            Add a quick score, highlight what stood out, and help other families
-            choose confidently.
-          </p>
-
-          <form
-            className="mt-6 space-y-5"
-            onSubmit={(event) => {
-              event.preventDefault();
-              onSubmitReview(playlist.id);
-            }}
-          >
-            <label className="block">
-              <span className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
-                Your name
-              </span>
-              <input
-                type="text"
-                value={draft.name}
-                onChange={(event) =>
-                  onDraftChange(playlist.id, {
-                    ...draft,
-                    name: event.target.value,
-                  })
-                }
-                placeholder="e.g. The Martins"
-                className="mt-2 w-full rounded-xl border border-brand-gold/20 bg-transparent px-4 py-2 text-sm text-brand-cream focus:border-brand-gold focus:outline-none focus:ring-0"
-                required
-              />
-            </label>
-
-            <label className="block">
-              <span className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
-                Kid-friendly score
-              </span>
-              <div className="mt-3 flex items-center gap-3">
-                <input
-                  type="range"
-                  min="1"
-                  max="5"
-                  step="1"
-                  value={draft.rating}
-                  onChange={(event) =>
-                    onDraftChange(playlist.id, {
-                      ...draft,
-                      rating: Number(event.target.value),
-                    })
-                  }
-                  className="w-full accent-brand-gold"
-                />
-                <span className="w-10 text-right text-sm text-brand-cream">
-                  {draft.rating}/5
-                </span>
-              </div>
-            </label>
-
-            <label className="block">
-              <span className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
-                Quick thoughts
-              </span>
-              <textarea
-                rows="3"
-                value={draft.comment}
-                onChange={(event) =>
-                  onDraftChange(playlist.id, {
-                    ...draft,
-                    comment: event.target.value,
-                  })
-                }
-                placeholder="What moments did your crew love most?"
-                className="mt-2 w-full rounded-xl border border-brand-gold/20 bg-transparent px-4 py-2 text-sm text-brand-cream focus:border-brand-gold focus:outline-none focus:ring-0"
-                required
-              />
-            </label>
-
-            <fieldset>
-              <legend className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
-                Pick a few highlights
-              </legend>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {keywordOptions.map((keyword) => {
-                  const isSelected = draft.keywords.includes(keyword);
-                  return (
-                    <button
-                      key={keyword}
-                      type="button"
-                      onClick={() => {
+                <form
+                  className="mt-6 space-y-5"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    const didSubmit = onSubmitReview(playlist.id);
+                    if (didSubmit) {
+                      setIsFormOpen(false);
+                    }
+                  }}
+                  id={formId}
+                >
+                  <label className="block">
+                    <span className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
+                      Your name
+                    </span>
+                    <input
+                      type="text"
+                      value={draft.name}
+                      onChange={(event) =>
                         onDraftChange(playlist.id, {
                           ...draft,
-                          keywords: isSelected
-                            ? draft.keywords.filter((item) => item !== keyword)
-                            : [...draft.keywords, keyword],
-                        });
-                      }}
-                      className={`rounded-full border px-3 py-1 text-[0.65rem] uppercase tracking-[0.25em] transition ${
-                        isSelected
-                          ? "border-brand-gold bg-brand-gold/20 text-brand-cream"
-                          : "border-brand-gold/30 text-brand-cream/60 hover:border-brand-gold/50 hover:text-brand-cream"
-                      }`}
-                    >
-                      {keyword}
-                    </button>
-                  );
-                })}
-              </div>
-            </fieldset>
+                          name: event.target.value,
+                        })
+                      }
+                      placeholder="e.g. The Martins"
+                      className="mt-2 w-full rounded-xl border border-brand-gold/20 bg-transparent px-4 py-2 text-sm text-brand-cream focus:border-brand-gold focus:outline-none focus:ring-0"
+                      required
+                    />
+                  </label>
 
-            <button
-              type="submit"
-              className="w-full rounded-xl bg-brand-gold px-5 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-brand-ink transition hover:bg-white"
-            >
-              Post Review
-            </button>
-          </form>
-        </div>
+                  <label className="block">
+                    <span className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
+                      Kid-friendly score
+                    </span>
+                    <div className="mt-3 flex items-center gap-3">
+                      <input
+                        type="range"
+                        min="1"
+                        max="5"
+                        step="1"
+                        value={draft.rating}
+                        onChange={(event) =>
+                          onDraftChange(playlist.id, {
+                            ...draft,
+                            rating: Number(event.target.value),
+                          })
+                        }
+                        className="w-full accent-brand-gold"
+                      />
+                      <span className="w-10 text-right text-sm text-brand-cream">
+                        {draft.rating}/5
+                      </span>
+                    </div>
+                  </label>
+
+                  <label className="block">
+                    <span className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
+                      Quick thoughts
+                    </span>
+                    <textarea
+                      rows="3"
+                      value={draft.comment}
+                      onChange={(event) =>
+                        onDraftChange(playlist.id, {
+                          ...draft,
+                          comment: event.target.value,
+                        })
+                      }
+                      placeholder="What moments did your crew love most?"
+                      className="mt-2 w-full rounded-xl border border-brand-gold/20 bg-transparent px-4 py-2 text-sm text-brand-cream focus:border-brand-gold focus:outline-none focus:ring-0"
+                      required
+                    />
+                  </label>
+
+                  <fieldset>
+                    <legend className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
+                      Pick a few highlights
+                    </legend>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {keywordOptions.map((keyword) => {
+                        const isSelected = draft.keywords.includes(keyword);
+                        return (
+                          <button
+                            key={keyword}
+                            type="button"
+                            onClick={() => {
+                              onDraftChange(playlist.id, {
+                                ...draft,
+                                keywords: isSelected
+                                  ? draft.keywords.filter((item) => item !== keyword)
+                                  : [...draft.keywords, keyword],
+                              });
+                            }}
+                            className={`rounded-full border px-3 py-1 text-[0.65rem] uppercase tracking-[0.25em] transition ${
+                              isSelected
+                                ? "border-brand-gold bg-brand-gold/20 text-brand-cream"
+                                : "border-brand-gold/30 text-brand-cream/60 hover:border-brand-gold/50 hover:text-brand-cream"
+                            }`}
+                          >
+                            {keyword}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </fieldset>
+
+                  <button
+                    type="submit"
+                    className="w-full rounded-xl bg-brand-gold px-5 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-brand-ink transition hover:bg-white"
+                  >
+                    Post Review
+                  </button>
+                </form>
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );
@@ -933,7 +972,7 @@ export default function App() {
   const handleSubmitReview = (playlistId) => {
     const draft = drafts[playlistId];
     if (!draft?.name || !draft?.comment || !draft?.rating) {
-      return;
+      return false;
     }
 
     const newReview = {
@@ -955,6 +994,8 @@ export default function App() {
       ...prev,
       [playlistId]: { name: "", rating: 4, comment: "", keywords: [] },
     }));
+
+    return true;
   };
 
   return (
