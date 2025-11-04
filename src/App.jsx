@@ -242,13 +242,7 @@ const IconDirector = ({ className }) => (
       stroke="currentColor"
       strokeWidth="1.5"
     />
-    <circle
-      cx="13"
-      cy="6"
-      r="1.75"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    />
+    <circle cx="13" cy="6" r="1.75" stroke="currentColor" strokeWidth="1.5" />
     <rect
       x="4.5"
       y="9.5"
@@ -347,32 +341,60 @@ const IconCannes = ({ className }) => (
   </svg>
 );
 
-const keywordOptions = [
-  "Adventure",
-  "Heartwarming",
-  "Laughs",
-  "Music",
-  "Visuals",
-  "Learning",
-];
+const IconPlayOutline = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="8.5"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M10.25 8.75v6.5l5.25-3.25-5.25-3.25Z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const keywordOptions = ["Heartwarming", "Solace", "Growth"];
 
 const playlistSeed = [
   {
-    id: "stellar-sleepovers",
-    title: "Stellar Sleepovers",
-    tagline: "Dreamy space adventures perfect for pajama nights.",
-    ageRange: "5 – 8 years",
-    tags: ["Adventure", "Curiosity", "Soothing"],
+    id: "heart-warming-playlist",
+    title: "Whimsical & Wonder-filled Journey",
+    tagline:
+      "Young protagonists discovering magic, imagination, or joy through adventure or friendship.",
+    // ageRange: "5 – 8 years",
+    tags: ["Heartwarming"],
     films: [
       {
-        title: "Moonlight Mission",
+        title: "Confetti",
         blurb:
-          "A gentle sci-fi tale about a sibling duo learning teamwork on a lunar quest.",
-        director: "Ari Vega",
-        country: "Singapore",
-        language: "English & Mandarin",
-        runtimeMinutes: 72,
-        awards: ["Cannes Junior Nights - Audience Award"],
+          "A determined mother moves from rural China to New York City in hopes of finding a special education program for her dyslexic daughter.",
+        director: "Ann Hu",
+        country: "USA",
+        language: "Chinese, English",
+        runtimeMinutes: 85,
+        link: "https://www.mewatch.sg/movie/Confetti-468752",
+        videoEmbed:
+          "https://www.youtube.com/embed/bsmmkmXEwk0?si=Blxwu5-BnTyrfazW",
+        awards: [
+          {
+            name: "Audience Award",
+            organization: "Cannes Junior Nights",
+            year: 2023,
+          },
+        ],
       },
       {
         title: "Comet Campfire",
@@ -382,7 +404,16 @@ const playlistSeed = [
         country: "Philippines",
         language: "English & Tagalog",
         runtimeMinutes: 58,
-        awards: ["Busan Kids Wave - Best Short Program"],
+        link: "https://example.com/comet-campfire",
+        videoEmbed:
+          "https://www.youtube.com/embed/cometcampfire?rel=0&modestbranding=1",
+        awards: [
+          {
+            name: "Best Short Program",
+            organization: "Busan Kids Wave",
+            year: 2022,
+          },
+        ],
       },
       {
         title: "Stardust Sleepover",
@@ -392,7 +423,16 @@ const playlistSeed = [
         country: "South Korea",
         language: "Korean",
         runtimeMinutes: 46,
-        awards: ["Cannes Junior Nights - Official Selection"],
+        link: "https://example.com/stardust-sleepover",
+        videoEmbed:
+          "https://www.youtube.com/embed/stardustsleepover?rel=0&modestbranding=1",
+        awards: [
+          {
+            name: "Official Selection",
+            organization: "Cannes Junior Nights",
+            year: 2024,
+          },
+        ],
       },
     ],
     reviews: [
@@ -453,7 +493,16 @@ const playlistSeed = [
         country: "Brazil",
         language: "Portuguese & English",
         runtimeMinutes: 65,
-        awards: ["TIFFkids - Best Ensemble Comedy"],
+        link: "https://example.com/popcorn-pranksters",
+        videoEmbed:
+          "https://www.youtube.com/embed/popcornpranksters?rel=0&modestbranding=1",
+        awards: [
+          {
+            name: "Best Ensemble Comedy",
+            organization: "TIFFkids",
+            year: 2021,
+          },
+        ],
       },
       {
         title: "The Umbrella Parade",
@@ -463,7 +512,16 @@ const playlistSeed = [
         country: "Japan",
         language: "Japanese",
         runtimeMinutes: 52,
-        awards: ["Cannes Junior Nights - Jury Mention"],
+        link: "https://example.com/umbrella-parade",
+        videoEmbed:
+          "https://www.youtube.com/embed/umbrellaparade?rel=0&modestbranding=1",
+        awards: [
+          {
+            name: "Jury Mention",
+            organization: "Cannes Junior Nights",
+            year: 2023,
+          },
+        ],
       },
       {
         title: "Whisker Whirl",
@@ -472,7 +530,16 @@ const playlistSeed = [
         country: "United States",
         language: "English",
         runtimeMinutes: 70,
-        awards: ["SXSW WonderKids - Audience Favorite"],
+        link: "https://example.com/whisker-whirl",
+        videoEmbed:
+          "https://www.youtube.com/embed/whiskerwhirl?rel=0&modestbranding=1",
+        awards: [
+          {
+            name: "Audience Favorite",
+            organization: "SXSW WonderKids",
+            year: 2022,
+          },
+        ],
       },
       {
         title: "Balloon Buddies",
@@ -481,7 +548,16 @@ const playlistSeed = [
         country: "Canada",
         language: "English & French",
         runtimeMinutes: 48,
-        awards: ["Annecy Family Spotlight - Special Distinction"],
+        link: "https://example.com/balloon-buddies",
+        videoEmbed:
+          "https://www.youtube.com/embed/balloonbuddies?rel=0&modestbranding=1",
+        awards: [
+          {
+            name: "Special Distinction",
+            organization: "Annecy Family Spotlight",
+            year: 2020,
+          },
+        ],
       },
     ],
     reviews: [
@@ -543,7 +619,16 @@ const playlistSeed = [
         country: "Malaysia",
         language: "English & Malay",
         runtimeMinutes: 80,
-        awards: ["Berlinale Generation - Crystal Bear Nominee"],
+        link: "https://example.com/lanterns-in-the-library",
+        videoEmbed:
+          "https://www.youtube.com/embed/lanternsinthelibrary?rel=0&modestbranding=1",
+        awards: [
+          {
+            name: "Crystal Bear Nominee",
+            organization: "Berlinale Generation",
+            year: 2024,
+          },
+        ],
       },
       {
         title: "Garden of Small Giants",
@@ -553,7 +638,16 @@ const playlistSeed = [
         country: "Croatia",
         language: "Croatian & English",
         runtimeMinutes: 54,
-        awards: ["Cannes Junior Nights - Storytelling Award"],
+        link: "https://example.com/garden-of-small-giants",
+        videoEmbed:
+          "https://www.youtube.com/embed/gardenofsmallgiants?rel=0&modestbranding=1",
+        awards: [
+          {
+            name: "Storytelling Award",
+            organization: "Cannes Junior Nights",
+            year: 2022,
+          },
+        ],
       },
       {
         title: "The Bridge Builders",
@@ -563,7 +657,16 @@ const playlistSeed = [
         country: "Vietnam",
         language: "Vietnamese",
         runtimeMinutes: 95,
-        awards: ["Tribeca Family - Grand Prize"],
+        link: "https://example.com/the-bridge-builders",
+        videoEmbed:
+          "https://www.youtube.com/embed/thebridgebuilders?rel=0&modestbranding=1",
+        awards: [
+          {
+            name: "Grand Prize",
+            organization: "Tribeca Family",
+            year: 2023,
+          },
+        ],
       },
     ],
     reviews: [
@@ -661,7 +764,8 @@ function formatRuntime(minutes) {
 function summarizePlaylistRuntime(films) {
   const filmCount = films.length;
   const totalMinutes = films.reduce(
-    (sum, film) => sum + (Number.isFinite(film.runtimeMinutes) ? film.runtimeMinutes : 0),
+    (sum, film) =>
+      sum + (Number.isFinite(film.runtimeMinutes) ? film.runtimeMinutes : 0),
     0,
   );
 
@@ -687,6 +791,7 @@ function summarizePlaylistRuntime(films) {
 function FilmCarousel({ films, autoInterval = 6000 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [openVideoId, setOpenVideoId] = useState(null);
 
   useEffect(() => {
     if (!films.length) {
@@ -694,10 +799,12 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
       return;
     }
 
-    setActiveIndex((current) =>
-      current >= films.length ? 0 : current,
-    );
+    setActiveIndex((current) => (current >= films.length ? 0 : current));
   }, [films.length]);
+
+  useEffect(() => {
+    setOpenVideoId(null);
+  }, [activeIndex, films]);
 
   useEffect(() => {
     if (films.length <= 1 || isHovered) {
@@ -748,6 +855,7 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
             language,
             runtimeMinutes,
             link,
+            videoEmbed,
             awards = [],
           } = film;
           const hasAwards = Array.isArray(awards) && awards.length > 0;
@@ -758,6 +866,23 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
             : runtimeMinutes >= 60
               ? `${formatRuntime(runtimeMinutes)} (${runtimeMinutes} min)`
               : `${runtimeMinutes} min`;
+
+          const isVideoOpen = openVideoId === title && Boolean(videoEmbed);
+
+          const handlePlay = (event) => {
+            if (!videoEmbed) {
+              return;
+            }
+            event.preventDefault();
+            event.stopPropagation();
+            setOpenVideoId(title);
+          };
+
+          const handleClose = (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            setOpenVideoId(null);
+          };
 
           const content = (
             <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
@@ -823,7 +948,9 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
                               className="rounded-full border border-brand-gold/30 bg-brand-gold/10 px-3 py-1 text-[0.65rem] uppercase tracking-[0.2em] text-brand-cream"
                             >
                               {award.name}
-                              {award.organization ? ` • ${award.organization}` : ""}
+                              {award.organization
+                                ? ` • ${award.organization}`
+                                : ""}
                               {award.year ? ` (${award.year})` : ""}
                             </span>
                           ))}
@@ -831,27 +958,59 @@ function FilmCarousel({ films, autoInterval = 6000 }) {
                       </div>
                     </div>
                   ) : null}
+                  {link ? (
+                    <div className="pt-4">
+                      <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-black/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-brand-cream transition hover:border-brand-gold/80 hover:text-brand-gold"
+                      >
+                        <IconPlayOutline className="h-4 w-4" />
+                        Watch Here!
+                      </a>
+                    </div>
+                  ) : null}
                 </div>
               </div>
-              <div className="flex h-48 items-center justify-center rounded-2xl border border-brand-gold/15 bg-brand-gold/5 text-xs uppercase tracking-[0.3em] text-brand-cream/40 sm:h-56">
-                GIF placeholder
+              <div className="relative">
+                {isVideoOpen ? (
+                  <div className="relative h-64 w-full sm:h-[22rem]">
+                    <iframe
+                      title={`${title} trailer`}
+                      src={videoEmbed}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="h-full w-full rounded-2xl border border-brand-gold/15"
+                    />
+                    <button
+                      type="button"
+                      onClick={handleClose}
+                      className="absolute right-3 top-3 rounded-full border border-brand-gold/40 bg-black/60 px-3 py-1 text-xs uppercase tracking-[0.25em] text-brand-cream transition hover:border-brand-gold/80 hover:text-brand-gold"
+                    >
+                      Close trailer
+                    </button>
+                  </div>
+                ) : (
+                  <div className="relative">
+                    <div className="flex h-64 items-center justify-center rounded-2xl border border-brand-gold/15 bg-brand-gold/5 text-xs uppercase tracking-[0.3em] text-brand-cream/40 sm:h-[22rem]">
+                      GIF placeholder
+                    </div>
+                    {videoEmbed ? (
+                      <button
+                        type="button"
+                        onClick={handlePlay}
+                        className="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/45 text-sm font-semibold uppercase tracking-[0.35em] text-brand-cream transition hover:bg-black/60"
+                      >
+                        ▶ Play trailer
+                      </button>
+                    ) : null}
+                  </div>
+                )}
               </div>
             </div>
           );
-
-          if (link) {
-            return (
-              <a
-                key={title}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="min-w-full block p-6 sm:p-8 lg:p-10 transition hover:bg-brand-black/30"
-              >
-                {content}
-              </a>
-            );
-          }
 
           return (
             <div key={title} className="min-w-full p-6 sm:p-8 lg:p-10">
@@ -1133,8 +1292,8 @@ function PlaylistCard({
                   </h3>
                 </div>
                 <p className="mt-1 text-sm text-brand-cream/60">
-                  Add a quick score, highlight what stood out, and help other families
-                  choose confidently.
+                  Add a quick score, highlight what stood out, and help other
+                  families choose confidently.
                 </p>
 
                 <form
@@ -1168,9 +1327,9 @@ function PlaylistCard({
                   </label>
 
                   <label className="block">
-                  <span className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
-                    Family Rating
-                  </span>
+                    <span className="text-xs uppercase tracking-[0.25em] text-brand-cream/60">
+                      Family Rating
+                    </span>
                     <div className="mt-3 flex items-center gap-3">
                       <input
                         type="range"
@@ -1226,7 +1385,9 @@ function PlaylistCard({
                               onDraftChange(playlist.id, {
                                 ...draft,
                                 keywords: isSelected
-                                  ? draft.keywords.filter((item) => item !== keyword)
+                                  ? draft.keywords.filter(
+                                      (item) => item !== keyword,
+                                    )
                                   : [...draft.keywords, keyword],
                               });
                             }}
