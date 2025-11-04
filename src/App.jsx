@@ -861,7 +861,9 @@ export default function App() {
       <div className="relative z-10">
         <nav className="flex items-center justify-between px-6 pt-8 sm:px-10">
           <div className="flex items-center gap-4">
-            <img src={logo} alt="cinemaworldLogo" />
+            <a href="https://cinemaworld.asia/">
+              <img src={logo} alt="cinemaworldLogo" />
+            </a>
           </div>
         </nav>
         <header className="px-6 pt-12 pb-14 text-center sm:px-10">
