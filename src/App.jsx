@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import logo from "./assset/cw_logo.svg";
 
 const IconSpark = ({ className }) => (
@@ -468,6 +468,125 @@ function getReviewStats(reviews) {
   };
 }
 
+function FilmCarousel({ films, autoInterval = 6000 }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (!films.length) {
+      setActiveIndex(0);
+      return;
+    }
+
+    setActiveIndex((current) =>
+      current >= films.length ? 0 : current,
+    );
+  }, [films.length]);
+
+  useEffect(() => {
+    if (films.length <= 1 || isHovered) {
+      return undefined;
+    }
+
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const timerId = window.setInterval(() => {
+      setActiveIndex((previous) => (previous + 1) % films.length);
+    }, autoInterval);
+
+    return () => window.clearInterval(timerId);
+  }, [films.length, autoInterval, isHovered]);
+
+  const goToSlide = (index) => {
+    setActiveIndex(index);
+  };
+
+  const goPrevious = () => {
+    setActiveIndex((previous) =>
+      previous === 0 ? films.length - 1 : previous - 1,
+    );
+  };
+
+  const goNext = () => {
+    setActiveIndex((previous) => (previous + 1) % films.length);
+  };
+
+  return (
+    <div
+      className="relative overflow-hidden rounded-3xl border border-brand-gold/15 bg-brand-black/40"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div
+        className="flex transition-transform duration-500 ease-out"
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      >
+        {films.map((film) => (
+          <div key={film.title} className="min-w-full p-6 sm:p-8 lg:p-10">
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-brand-cream/60">
+                  Featured Film
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold text-brand-gold">
+                  {film.title}
+                </h3>
+                <p className="mt-3 text-sm text-brand-cream/70">
+                  {film.blurb}
+                </p>
+              </div>
+              <div className="flex h-48 items-center justify-center rounded-2xl border border-brand-gold/15 bg-brand-gold/5 text-xs uppercase tracking-[0.3em] text-brand-cream/40 sm:h-56">
+                GIF placeholder
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {films.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={goPrevious}
+            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-brand-gold/30 bg-black/40 p-2 text-brand-cream transition hover:border-brand-gold/70 hover:text-brand-gold"
+            aria-label="Previous film"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            onClick={goNext}
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-brand-gold/30 bg-black/40 p-2 text-brand-cream transition hover:border-brand-gold/70 hover:text-brand-gold"
+            aria-label="Next film"
+          >
+            ›
+          </button>
+          <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 gap-2">
+            {films.map((film, index) => {
+              const isActive = index === activeIndex;
+              return (
+                <button
+                  key={`${film.title}-dot`}
+                  type="button"
+                  onClick={() => goToSlide(index)}
+                  className={`h-2.5 w-2.5 rounded-full transition ${
+                    isActive
+                      ? "bg-brand-gold shadow-glow"
+                      : "bg-brand-gold/25 hover:bg-brand-gold/60"
+                  }`}
+                  aria-label={`Show ${film.title}`}
+                />
+              );
+            })}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 function PlaylistCard({
   playlist,
   stats,
@@ -519,21 +638,8 @@ function PlaylistCard({
         ))}
       </div>
 
-      <div className="mt-8 grid gap-4 lg:grid-cols-3">
-        {playlist.films.map((film) => (
-          <article
-            key={film.title}
-            className="group rounded-2xl border border-brand-gold/10 bg-brand-black/40 p-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-brand-gold/30 hover:shadow-lg"
-          >
-            <div className="mb-4 flex h-40 transform items-center justify-center rounded-xl border border-brand-gold/20 bg-brand-gold/5 text-xs uppercase tracking-[0.3em] text-brand-cream/50 transition-transform duration-300 ease-out group-hover:-translate-y-1 group-hover:scale-[1.04]">
-              Image Placeholder
-            </div>
-            <h3 className="text-lg font-semibold text-brand-gold">
-              {film.title}
-            </h3>
-            <p className="mt-2 text-sm text-brand-cream/70">{film.blurb}</p>
-          </article>
-        ))}
+      <div className="mt-8">
+        <FilmCarousel films={playlist.films} />
       </div>
 
       <div className="mt-10 grid gap-8 border-t border-brand-gold/10 pt-8 lg:grid-cols-[1.2fr_1fr]">
