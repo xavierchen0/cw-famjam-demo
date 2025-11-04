@@ -428,27 +428,21 @@ const playlistSeed = [
         ],
       },
       {
-        title: "A Butterfly's Heart",
+        title: "Summer Rebels",
         blurb:
-          "Juozapas is a quiet boy who cultivates insects in an abandoned house. He has a big bulge under his weird sweater and the school’s tough kids call him “balloon”. Rugilè moves to town and becomes Juozapas’ friend. She is the first to discover his secret.",
-        director: "Inesa Kurklietyte",
-        country: "Lithuania",
-        language: "Lithuanian",
-        runtimeMinutes: 120,
-        link: "https://www.mewatch.sg/movie/A-Butterflys-Heart-435982",
+          "Young Jonas wants to visit his cool grandpa in Slovakia for a summer of fun, but his mom has other plans. Undeterred, Jonas takes off on an adventure of his own in this luminous and light-hearted tale of rebellion, friendship, catastrophe and redemption.",
+        director: "Martina Sakova",
+        country: "Germany, Slovak Republic",
+        language: "German, Slovak, Czech",
+        runtimeMinutes: 92,
+        link: "https://www.mewatch.sg/movie/Summer-Rebels-422799",
         videoEmbed:
-          "https://www.youtube.com/embed/nzDCLv1gaCA?si=0ZKwnNRuLRMlaBMn",
-        posterImage: "https://img.youtube.com/vi/nzDCLv1gaCA/maxresdefault.jpg",
+          "https://www.youtube.com/embed/9AaDAkNJ5-g?si=VOgkQn6JgH2eqtzO",
+        posterImage: "https://img.youtube.com/vi/9AaDAkNJ5-g/maxresdefault.jpg",
         awards: [
           {
-            name: "ECFA Award (Feature Kids)",
-            organization:
-              "Filem'on:International Children's Film Festival Brussels",
-            year: 2022,
-          },
-          {
-            name: "Audience Favourite",
-            organization: "Chicago International Children's Film Festival",
+            name: "Best Children's Film, German FIlm Critics Award",
+            organization: "German Film Critics Association Awards",
             year: 2022,
           },
         ],
